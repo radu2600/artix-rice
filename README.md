@@ -1,3 +1,3 @@
-# arch-rice
+# artix-rice
 
-Arch Linux / i3-gaps config files
+Artix Linux / i3-gaps config files
