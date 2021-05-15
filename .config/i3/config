@@ -30,6 +30,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+exec --no-startup-id pipewire
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 #exec --no-startup-id udiskie
 
@@ -46,8 +47,8 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+n exec --no-startup-id brave
 bindsym $mod+Shift+i exec --no-startup-id librewolf
 bindsym $mod+Shift+p exec --no-startup-id pavucontrol
-bindsym $mod+Shift+m exec --no-startup-id exec termite -e "calcurse"
-bindsym $mod+Shift+f exec --no-startup-id exec termite -e "ranger"
+bindsym $mod+Shift+m exec --no-startup-id exec alacritty -e "calcurse"
+bindsym $mod+Shift+f exec --no-startup-id exec alacritty -e "ranger"
 bindsym $mod+Shift+u exec --no-startup-id exec audacious
 
 
@@ -265,7 +266,7 @@ for_window [class="Brave-browser"] move to workspace $ws2
 #for_window [class="Code"] move to workspace $ws3
 
 #Disable mouse accel
-exec_always --no-startup-id xinput --set-prop 14 'libinput Accel Speed' -0.7
+exec_always --no-startup-id xinput --set-prop 12 'libinput Accel Speed' -0.7
 
 #Trying to fix Chrome
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets

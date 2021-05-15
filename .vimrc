@@ -54,13 +54,14 @@ syntax on
  
 " Set colorscheme
 "colorscheme gruvbox
-"colorscheme base16-synth-midnight-dark
-colorscheme jellybeans
+colorscheme base16-synth-midnight-dark
+"colorscheme base16-tomorrow-night
+"colorscheme jellybeans
 "let g:colors_name = 'vividchalk_modified'
 highlight LineNr guibg=NONE
 
 set mouse=a
-let g:gruvbox_contrast_dark = 'hard'
+"let g:gruvbox_contrast_dark = 'hard'
 "Trying indent
 "set expandtab ts=4 sw=4 ai
 set ts=4 sw=4 sts=4
@@ -79,7 +80,7 @@ let g:lightline = {
 set laststatus=2
 
 "Terminal colors 256
-"set t_Co=256
+set t_Co=256
 "let g:rehash256 = 1
 set background=dark
 set termguicolors
@@ -109,9 +110,11 @@ se cul
 hi clear CursorLine
 hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
 "hi cursorlinenr guifg=orange guibg=black (am scos de sus)
-let &t_SI = "\<esc>[5 q"  " blinking I-beam in insert mode
-let &t_SR = "\<esc>[3 q"  " blinking underline in replace mode
-let &t_EI = "\<esc>[ q"  " default cursor (usually blinking block) otherwise
+"let &t_SI = "\<esc>[5 q"  " blinking I-beam in insert mode
+"let &t_SR = "\<esc>[3 q"  " blinking underline in replace mode
+"let &t_EI = "\<esc>[ q"  " default cursor (usually blinking block) otherwise
 
 
-set ttymouse=sgr
+"set ttymouse=sgr
+set guicursor=i:block
+set guicursor+=a:blinkon0

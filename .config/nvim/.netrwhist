@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/radu/Desktop/infoarena/infounitbv/corman/Quick Sort'
+let g:netrw_dirhist_8='/home/radu/Desktop/infoarena/infounitbv/corman'
+let g:netrw_dirhist_7='/home/radu/Desktop/infoarena/infounitbv'
+let g:netrw_dirhist_6='/home/radu/Desktop/infoarena'
+let g:netrw_dirhist_5='/home/radu/Desktop'
+let g:netrw_dirhist_4='/home/radu/Desktop/infoarena/infounitbv/corman/Doubly Linked Lists'
+let g:netrw_dirhist_3='/home/radu/Desktop/infoarena/infounitbv/corman'
+let g:netrw_dirhist_2='/home/radu/Desktop/infoarena/infounitbv'
+let g:netrw_dirhist_1='/home/radu/Desktop/infoarena'
