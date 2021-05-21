@@ -3,8 +3,10 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/radu/.oh-my-zsh"
-ZSH_THEME="agnoster"
-
+ZSH_THEME="powerlevel9k/powerlevel9k"
+#POWERLEVEL9K_MODE="nerdfont-complete"
+POWERLEVEL9K_MODE='awesome-fontconfig'
+POWERLEVEL9K_DISABLE_RPROMPT=true
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
