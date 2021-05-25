@@ -7,11 +7,11 @@ env:
 font:
   # Normal (roman) font face
   normal:
-    family: Code New Roman
+    family: Source Code Pro
     style: Regular
 
   bold:
-    family: Code New Roman
+    family: Source Code Pro
     style: Bold
 
   italic:
@@ -22,7 +22,7 @@ font:
     family: Code New Roman
 
   # Point size
-  size: 15.0
+  size: 12.0
 
 background_opacity: 0.95
 
