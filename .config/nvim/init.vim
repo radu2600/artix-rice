@@ -2,21 +2,20 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 filetype off                  " required
 
-set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
 
-Plug 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
-Plug 'tpope/vim-fugitive'
-Plug 'git://git.wincent.com/command-t.git'
-Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+ Plug 'tpope/vim-fugitive'
+ Plug 'git://git.wincent.com/command-t.git'
+ Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
  Plug 'jiangmiao/auto-pairs'
  "Bar
  Plug 'itchyny/lightline.vim'     
  "Themes
- Plug 'chriskempson/base16-vim'
- Plug 'nanotech/jellybeans.vim'
- Plug 'wojciechkepka/vim-github-dark'
+ "Plug 'chriskempson/base16-vim'
+ "Plug 'nanotech/jellybeans.vim'
+ "Plug 'wojciechkepka/vim-github-dark'
+ Plug 'sainnhe/edge'
  "CPP
  Plug 'sheerun/vim-polyglot'
  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
@@ -40,8 +39,16 @@ set number relativenumber
 syntax on
  
 " Set colorscheme
-"colorscheme base16-synth-midnight-dark
-colorscheme ghdark
+"colorscheme ghdark
+if has('termguicolors')
+  set termguicolors
+endif
+let g:edge_style = 'aura'
+let g:edge_enable_italic = 0
+let g:edge_transparent_background = 1
+let g:edge_disable_italic_comment = 1
+colorscheme edge
+
 highlight LineNr guibg=NONE
 
 set mouse=a
@@ -99,3 +106,7 @@ hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
 "set ttymouse=sgr
 set guicursor=i:block
 set guicursor+=a:blinkon0
+
+
+"templates
+:autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
