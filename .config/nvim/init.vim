@@ -6,8 +6,6 @@ call plug#begin('~/.vim/plugged')
 
 " Keep Plugin commands between vundle#begin/end.
  Plug 'tpope/vim-fugitive'
- Plug 'git://git.wincent.com/command-t.git'
- Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
  Plug 'jiangmiao/auto-pairs'
  "Bar
  Plug 'itchyny/lightline.vim'     
