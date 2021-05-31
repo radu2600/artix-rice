@@ -15,6 +15,9 @@ call plug#begin('~/.vim/plugged')
  "Plug 'wojciechkepka/vim-github-dark'
  Plug 'sainnhe/edge'
  "CPP
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'kabouzeid/nvim-lspinstall'
+" Plug 'nvim-lua/completion-nvim'
  Plug 'sheerun/vim-polyglot'
  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
  Plug 'junegunn/fzf.vim'
@@ -25,11 +28,6 @@ call plug#end()
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "Set number command at start up
 set number relativenumber
   
@@ -41,7 +39,7 @@ syntax on
 if has('termguicolors')
   set termguicolors
 endif
-let g:edge_style = 'aura'
+let g:edge_style = 'neon'
 let g:edge_enable_italic = 0
 let g:edge_transparent_background = 1
 let g:edge_disable_italic_comment = 1
@@ -96,9 +94,6 @@ se cul
 hi clear CursorLine
 hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
 "hi cursorlinenr guifg=orange guibg=black (am scos de sus)
-"let &t_SI = "\<esc>[5 q"  " blinking I-beam in insert mode
-"let &t_SR = "\<esc>[3 q"  " blinking underline in replace mode
-"let &t_EI = "\<esc>[ q"  " default cursor (usually blinking block) otherwise
 
 
 "set ttymouse=sgr
@@ -108,3 +103,27 @@ set guicursor+=a:blinkon0
 
 "templates
 :autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
+
+""Config
+"lua << EOF
+"require'lspconfig'.clangd.setup{}
+"EOF
+"
+"lua << EOF
+"require'lspconfig'.pyright.setup{}
+"EOF
+"
+"
+"
+""Completion
+"autocmd BufEnter * lua require'completion'.on_attach()
+"
+"" Use <Tab> and <S-Tab> to navigate through popup menu
+"inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"
+"" Set completeopt to have a better completion experience
+"set completeopt=menuone,noinsert,noselect
+"
+"" Avoid showing message extra message when using completion
+"set shortmess+=c

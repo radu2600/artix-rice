@@ -186,21 +186,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-#Window color and bar color
-#   set $bgcolor    #330033CC
-#   set $ibgcolor   #1d1c1d
-#   set $textcolor  #ffffff
-#   set $ubgcolor   #ff0000
-#   set $itextcolor #969696
-#   set $fws        #00897bCC
-#   set $inactive   #585c5e
-#   set $inactive2  #222c31
-
-# 		 	            border		background		text 		    indicator
-#   client.focused		    $bgcolor	$bgcolor		$textcolor	    $bgcolor
-#   client.unfocused	    $ibgcolor	$ibgcolor		$itextcolor 	$ibgcolor 
-#   client.focused_inactive	$ibgcolor	$ibgcolor		$itextcolor 	$ibgcolor
-#   client.urgent		    $ubgcolor	$ubgcolor		$itextcolor	    $ubgcolor
 
 # class                 border  bground text    indicator child_border
 client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
@@ -210,25 +195,6 @@ client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
 client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
-
-#   bar {
-#             status_command i3status -c /home/radu/.config/i3status/i3status.conf	
-#             #font pango:droid mono 11
-#             font pango:Ubuntu Regular 12
-#             position top
-#            colors {
-#              #background #282A36
-#              #background #1d1c1d
-#              statusline #F8F8F2
-#              separator  #44475A
-
-#              #focused_workspace  #44475A #44475A #F8F8F2
-#              #active_workspace   #282A36 #44475A #F8F8F2
-#              #inactive_workspace #282A36 #282A36 #BFBFBF
-#              #urgent_workspace   #FF5555 #FF5555 #F8F8F2
-#              #binding_mode       #FF5555 #FF5555 #F8F8F2
-#            }
-#   }
 
     bar {
            status_command /usr/bin/bumblebee-status -m sensors cpu pasink nic disk:root \
@@ -241,7 +207,6 @@ client.background       #F8F8F2
             -t gruvbox-powerline
 
               font pango: ack 11
-              #font pango: monospace 11
               position top 
              colors {
                #background #282A36
@@ -259,11 +224,6 @@ client.background       #F8F8F2
 
 #Change wallpaperi
 exec_always --no-startup-id feh --bg-fill ~/Downloads/download.jpg
-
-#Assing programs to workspaces
-#for_window [class="Termite"] move to workspace $ws1
-for_window [class="Brave-browser"] move to workspace $ws2
-#for_window [class="Code"] move to workspace $ws3
 
 #Disable mouse accel
 exec_always --no-startup-id xinput --set-prop 12 'libinput Accel Speed' -0.7
