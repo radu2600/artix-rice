@@ -204,9 +204,9 @@ client.background       #F8F8F2
             -p root.path=/ time.format="%H:%M:%S " date.format="%a, %d.%m.%Y" \
             -p home.path=/home disk.format='{used}/{size}' nic.format='{state}'  \
             -p memory.format='{used}/{total}' sensors.show_freq=false\
-            -t gruvbox-powerline
+            -t onedark-powerline
 
-              font pango: ack 11
+              font pango: mononoki Nerd Font 11
               position top 
              colors {
                #background #282A36
@@ -214,7 +214,7 @@ client.background       #F8F8F2
                statusline #F8F8F2
                separator  #44475A
 
-               #focused_workspace  #44475A #44475A #F8F8F2
+               focused_workspace   #b536f0 #693a7c #F8F8F2
                #active_workspace   #282A36 #44475A #F8F8F2
                #inactive_workspace #282A36 #282A36 #BFBFBF
                #urgent_workspace   #FF5555 #FF5555 #F8F8F2
