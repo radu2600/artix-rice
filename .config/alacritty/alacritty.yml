@@ -15,11 +15,11 @@ font:
     style: Bold
 
   italic:
-    family: Code New Roman
+    family: Source Code Pro
 
   # Bold italic font face
   bold_italic:
-    family: Code New Roman
+    family: Source Code Pro
 
   # Point size
   size: 12.0

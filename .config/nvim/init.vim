@@ -14,7 +14,7 @@ call plug#begin('~/.vim/plugged')
  "Plug 'nanotech/jellybeans.vim'
  "Plug 'wojciechkepka/vim-github-dark'
  Plug 'sainnhe/edge'
- "CPP
+ "LSP
 " Plug 'neovim/nvim-lspconfig'
 " Plug 'kabouzeid/nvim-lspinstall'
 " Plug 'nvim-lua/completion-nvim'
@@ -97,23 +97,20 @@ hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
 
 
 "set ttymouse=sgr
-set guicursor=i:block
-set guicursor+=a:blinkon0
+"set guicursor=i:block
+"set guicursor+=a:blinkon0
 
 
 "templates
 :autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
 
 ""Config
+
 "lua << EOF
 "require'lspconfig'.clangd.setup{}
-"EOF
-"
-"lua << EOF
 "require'lspconfig'.pyright.setup{}
+"require'lspconfig'.typescript-language-server.setup{}
 "EOF
-"
-"
 "
 ""Completion
 "autocmd BufEnter * lua require'completion'.on_attach()
