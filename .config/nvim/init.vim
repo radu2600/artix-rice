@@ -15,9 +15,10 @@ call plug#begin('~/.vim/plugged')
  "Plug 'wojciechkepka/vim-github-dark'
  Plug 'sainnhe/edge'
  "LSP
-" Plug 'neovim/nvim-lspconfig'
-" Plug 'kabouzeid/nvim-lspinstall'
-" Plug 'nvim-lua/completion-nvim'
+ Plug 'neovim/nvim-lspconfig'
+ Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+ Plug 'nvim-lua/completion-nvim'
  Plug 'sheerun/vim-polyglot'
  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
  Plug 'junegunn/fzf.vim'
@@ -93,34 +94,52 @@ hi ErrorMsg NONE
 se cul
 hi clear CursorLine
 hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
-"hi cursorlinenr guifg=orange guibg=black (am scos de sus)
-
-
-"set ttymouse=sgr
-"set guicursor=i:block
-"set guicursor+=a:blinkon0
-
 
 "templates
 :autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
 
-""Config
 
-"lua << EOF
-"require'lspconfig'.clangd.setup{}
-"require'lspconfig'.pyright.setup{}
-"require'lspconfig'.typescript-language-server.setup{}
-"EOF
+
+" LSP stuff
 "
-""Completion
-"autocmd BufEnter * lua require'completion'.on_attach()
-"
-"" Use <Tab> and <S-Tab> to navigate through popup menu
-"inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-"
-"" Set completeopt to have a better completion experience
-"set completeopt=menuone,noinsert,noselect
-"
-"" Avoid showing message extra message when using completion
-"set shortmess+=c
+lua << EOF
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require'lspconfig'.html.setup {
+  capabilities = capabilities,
+  on_attach = require'completion'.on_attach
+}
+
+local nvim_lsp = require('lspconfig')
+local on_attach = function(_, bufnr)
+require('completion').on_attach()
+local opts = { noremap=true, silent=true }
+end
+local servers = {'clangd', 'pyright', 'tsserver'}
+for _, lsp in ipairs(servers) do
+nvim_lsp[lsp].setup {
+  on_attach = require'completion'.on_attach
+}
+end
+
+EOF
+
+
+" fix conflict between completion-nvim and autopairs
+let g:completion_confirm_key = ""
+inoremap <expr> <cr>    pumvisible() ? "\<Plug>(completion_confirm_completion)" : "\<cr>"
+
+
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+
+
