@@ -18,7 +18,7 @@ call plug#begin('~/.vim/plugged')
  Plug 'neovim/nvim-lspconfig'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-
+ Plug 'preservim/nerdtree'
  Plug 'nvim-lua/completion-nvim'
  Plug 'sheerun/vim-polyglot'
  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
@@ -146,3 +146,7 @@ set shortmess+=c
 "Compile bind for cpp
 nnoremap <C-c> :!g++ -o  %:r % -std=c++11<Enter>
 nnoremap <C-x> :!./%:r<Enter>
+nnoremap <C-z> :!python3 %<Enter>
+
+
+nnoremap <C-n> :NERDTree<CR>
