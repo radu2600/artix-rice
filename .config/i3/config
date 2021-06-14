@@ -43,7 +43,7 @@ bindsym $mod+Return exec --no-startup-id alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
-#Run Chrome bind
+#Run bind
 bindsym $mod+Shift+n exec --no-startup-id brave
 bindsym $mod+Shift+i exec --no-startup-id librewolf
 bindsym $mod+Shift+p exec --no-startup-id pavucontrol
@@ -281,6 +281,8 @@ for_window [class="Gnome-control-center"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Xfce4-taskmanager"] floating enable
 for_window [class="Audacious"] floating enable
+
+for_window [class="Steam"] floating enable
 
 
 #Gaps

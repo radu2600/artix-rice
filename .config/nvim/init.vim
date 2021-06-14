@@ -18,6 +18,7 @@ call plug#begin('~/.vim/plugged')
  Plug 'neovim/nvim-lspconfig'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+
  Plug 'nvim-lua/completion-nvim'
  Plug 'sheerun/vim-polyglot'
  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
@@ -142,4 +143,6 @@ set completeopt=menuone,noinsert,noselect
 " Avoid showing message extra message when using completion
 set shortmess+=c
 
-
+"Compile bind for cpp
+nnoremap <C-c> :!g++ -o  %:r % -std=c++11<Enter>
+nnoremap <C-x> :!./%:r<Enter>
