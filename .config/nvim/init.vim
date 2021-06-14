@@ -149,4 +149,6 @@ nnoremap <C-x> :!./%:r<Enter>
 nnoremap <C-z> :!python3 %<Enter>
 
 
-nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") 
+      \ && b:NERDTree.isTabTree()) | q | endif
