@@ -143,15 +143,10 @@ set completeopt=menuone,noinsert,noselect
 " Avoid showing message extra message when using completion
 set shortmess+=c
 
-"Compile bind for cpp
-"nnoremap <C-c> :!g++ -o  %:r % -std=c++11<Enter>
-"nnoremap <C-x> :!./%:r<Enter>
-"nnoremap <C-z> :!python3 %<Enter>
-
 
 nnoremap <C-n> :NERDTreeToggle<CR>
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") 
-"      \ && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") 
+      \ && b:NERDTree.isTabTree()) | q | endif
 
 "Compile function
 function GetFileType()
@@ -173,6 +168,5 @@ function GetFileType()
     endif
 endfunction
 
-let filet = GetFileType()
-
 nnoremap <C-x> :<C-R>= GetFileType()<CR> <Enter>
+nnoremap <C-z> <Enter>
