@@ -144,11 +144,35 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
 "Compile bind for cpp
-nnoremap <C-c> :!g++ -o  %:r % -std=c++11<Enter>
-nnoremap <C-x> :!./%:r<Enter>
-nnoremap <C-z> :!python3 %<Enter>
+"nnoremap <C-c> :!g++ -o  %:r % -std=c++11<Enter>
+"nnoremap <C-x> :!./%:r<Enter>
+"nnoremap <C-z> :!python3 %<Enter>
 
 
 nnoremap <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") 
-      \ && b:NERDTree.isTabTree()) | q | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") 
+"      \ && b:NERDTree.isTabTree()) | q | endif
+
+"Compile function
+function GetFileType()
+    let curr_file = &filetype
+    if curr_file ==# "cpp"
+        return ":!g++ -o %:r % -std=c++11 && ./%:r"
+    endif
+    if curr_file ==# "python"
+        return ":!python3 %"
+    endif
+    if curr_file ==# "c"
+        return ":!gcc -o %:r %"
+    endif
+    if curr_file ==# "java"
+        return ":!java %"
+    endif
+    if curr_file ==# "html"
+        return ":!brave %"
+    endif
+endfunction
+
+let filet = GetFileType()
+
+nnoremap <C-x> :<C-R>= GetFileType()<CR> <Enter>
