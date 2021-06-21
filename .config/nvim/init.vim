@@ -43,7 +43,7 @@ if has('termguicolors')
 endif
 let g:edge_style = 'neon'
 let g:edge_enable_italic = 0
-let g:edge_transparent_background = 1
+let g:edge_transparent_background = 0
 let g:edge_disable_italic_comment = 1
 colorscheme edge
 
@@ -70,7 +70,6 @@ set laststatus=2
 "let g:rehash256 = 1
 "set background=dark
 "set termguicolors
-
 
 set completeopt-=preview
 
