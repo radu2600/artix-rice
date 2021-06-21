@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export TERM="screen-256color"
+export TERM="xterm-256color"
 export ZSH="/home/radu/.oh-my-zsh"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 #POWERLEVEL9K_MODE="nerdfont-complete"

@@ -14,7 +14,6 @@ call plug#begin('~/.vim/plugged')
  "Plug 'nanotech/jellybeans.vim'
  "Plug 'wojciechkepka/vim-github-dark'
  Plug 'sainnhe/edge'
- Plug 'danilo-augusto/vim-afterglow'
  "LSP
  Plug 'neovim/nvim-lspconfig'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -42,12 +41,11 @@ syntax on
 if has('termguicolors')
   set termguicolors
 endif
-"let g:edge_style = 'neon'
-"let g:edge_enable_italic = 0
-"let g:edge_transparent_background = 1
-"let g:edge_disable_italic_comment = 1
-let g:afterglow_blackout=1
-colorscheme afterglow
+let g:edge_style = 'neon'
+let g:edge_enable_italic = 0
+let g:edge_transparent_background = 1
+let g:edge_disable_italic_comment = 1
+colorscheme edge
 
 highlight LineNr guibg=NONE
 
@@ -58,7 +56,7 @@ set expandtab
 set ai
 
 let g:lightline = {
-      \ 'colorscheme': 'moonfly',
+      \ 'colorscheme': 'darcula',
       \ 'component': {
       \   'filename': '%F',
       \ }
@@ -68,9 +66,9 @@ let g:lightline = {
 set laststatus=2
 
 "Terminal colors 256
-set t_Co=256
-let g:rehash256 = 1
-set background=dark
+"set t_Co=256
+"let g:rehash256 = 1
+"set background=dark
 "set termguicolors
 
 

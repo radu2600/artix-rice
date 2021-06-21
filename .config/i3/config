@@ -204,7 +204,7 @@ client.background       #F8F8F2
             -p root.path=/ time.format="%H:%M:%S " date.format="%a, %d.%m.%Y" \
             -p home.path=/home disk.format='{used}/{size}' nic.format='{state}'  \
             -p memory.format='{used}/{total}' sensors.show_freq=false\
-            -t onedark-powerline
+            -t dracula-powerline
 
               font pango: mononoki Nerd Font 11
               position top 
