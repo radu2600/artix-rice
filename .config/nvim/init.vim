@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
  "Plug 'nanotech/jellybeans.vim'
  "Plug 'wojciechkepka/vim-github-dark'
  Plug 'sainnhe/edge'
+ Plug 'dracula/vim'
  "LSP
  Plug 'neovim/nvim-lspconfig'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -41,11 +42,12 @@ syntax on
 if has('termguicolors')
   set termguicolors
 endif
-let g:edge_style = 'neon'
-let g:edge_enable_italic = 0
-let g:edge_transparent_background = 0
-let g:edge_disable_italic_comment = 1
-colorscheme edge
+"let g:edge_style = 'neon'
+"let g:edge_enable_italic = 0
+"let g:edge_transparent_background = 0
+"let g:edge_disable_italic_comment = 1
+let g:dracula_italic = 0
+colorscheme dracula
 
 highlight LineNr guibg=NONE
 
@@ -66,10 +68,10 @@ let g:lightline = {
 set laststatus=2
 
 "Terminal colors 256
-"set t_Co=256
-"let g:rehash256 = 1
-"set background=dark
-"set termguicolors
+set t_Co=256
+let g:rehash256 = 1
+set background=dark
+set termguicolors
 
 set completeopt-=preview
 
@@ -171,4 +173,3 @@ nnoremap <C-x> :<C-R>= GetFileType()<CR> <Enter>
 nnoremap <C-z> <Enter>
 
 set guicursor =i:block
-
