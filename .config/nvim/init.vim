@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
  "Plug 'wojciechkepka/vim-github-dark'
  Plug 'sainnhe/edge'
  Plug 'dracula/vim'
+ Plug 'epmor/hotline-vim'
  "LSP
  Plug 'neovim/nvim-lspconfig'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -47,7 +48,8 @@ endif
 "let g:edge_transparent_background = 0
 "let g:edge_disable_italic_comment = 1
 let g:dracula_italic = 0
-colorscheme dracula
+"colorscheme dracula
+colorscheme hotline
 
 highlight LineNr guibg=NONE
 
@@ -173,3 +175,6 @@ nnoremap <C-x> :<C-R>= GetFileType()<CR> <Enter>
 nnoremap <C-z> <Enter>
 
 set guicursor =i:block
+
+let b:coc_diagnostic_disable = 1
+

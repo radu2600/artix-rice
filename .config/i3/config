@@ -32,6 +32,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id pipewire
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec "setxkbmap -layout us,de"
+exec "setxkbmap -option 'grp:alt_shift_toggle'"
 #exec --no-startup-id udiskie
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -281,6 +283,7 @@ for_window [class="Gnome-control-center"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Xfce4-taskmanager"] floating enable
 for_window [class="Audacious"] floating enable
+for_window [class="budget-reminder"] floating enable
 
 for_window [class="Steam"] floating enable
 

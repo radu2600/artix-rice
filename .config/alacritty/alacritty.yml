@@ -7,19 +7,19 @@ env:
 font:
   # Normal (roman) font face
   normal:
-    family: Code New Roman
+    family: Ubuntu Mono
     style: Regular
 
   bold:
-    family: Code New Roman
+    family: Ubuntu Mono
     style: Bold
 
   italic:
-    family: Code New Roman
+    family: Ubuntu Mono
 
   # Bold italic font face
   bold_italic:
-    family: Code New Roman
+    family: Ubuntu Mono
 
   # Point size
   size: 14.0
