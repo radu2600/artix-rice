@@ -14,7 +14,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:Ubuntu Regular 12
-font pango: monospace 9
+font pango: monospace 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -31,7 +31,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 exec --no-startup-id pipewire
+exec --no-startup-id cbatticon
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec --no-startup-id brightnessctl set 20%
 #exec --no-startup-id udiskie
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -197,7 +199,7 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
 
     bar {
-           status_command /usr/bin/bumblebee-status -m sensors cpu pasink nic disk:root \
+           status_command /usr/bin/bumblebee-status -m battery sensors cpu pasink nic disk:root \
              disk:home memory arch-update weather date time \
             -p nvidiagpu.format='GPU: {temp}°C' \
             -p weather.location="Brasov" weather.showcity=false \
@@ -206,7 +208,7 @@ client.background       #F8F8F2
             -p memory.format='{used}/{total}' sensors.show_freq=false\
             -t greyish-powerline
 
-              font pango: mononoki Nerd Font 11
+              font pango: mononoki Nerd Font 12
               position top 
              colors {
                #background #282A36
