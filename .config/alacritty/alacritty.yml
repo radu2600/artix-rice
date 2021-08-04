@@ -7,22 +7,23 @@ env:
 font:
   # Normal (roman) font face
   normal:
-    family: Ubuntu Mono
-    style: Regular
+    family: SF Mono
+    style: Medium
 
   bold:
-    family: Ubuntu Mono
-    style: Bold
+    family: SF Mono
+    style: Semibold
 
   italic:
-    family: Ubuntu Mono
+    family: SF Mono
+    style: Regular Italic
 
   # Bold italic font face
   bold_italic:
-    family: Ubuntu Mono
+    family: SF Mono
 
   # Point size
-  size: 14.0
+  size: 13.0
 
 background_opacity: 0.95
 

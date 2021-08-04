@@ -48,7 +48,6 @@ endif
 "let g:edge_transparent_background = 0
 "let g:edge_disable_italic_comment = 1
 let g:dracula_italic = 0
-"colorscheme dracula
 colorscheme hotline
 
 highlight LineNr guibg=NONE
@@ -96,7 +95,7 @@ hi ErrorMsg NONE
 
 
 se cul
-hi clear CursorLine
+hi clear CursorLineNr
 hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
 
 "templates
