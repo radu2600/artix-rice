@@ -10,12 +10,8 @@ call plug#begin('~/.vim/plugged')
  "Bar
  Plug 'itchyny/lightline.vim'     
  "Themes
- "Plug 'chriskempson/base16-vim'
- "Plug 'nanotech/jellybeans.vim'
- "Plug 'wojciechkepka/vim-github-dark'
- Plug 'sainnhe/edge'
- Plug 'dracula/vim'
- "LSP
+ Plug 'epmor/hotline-vim'
+ ""LSP
  Plug 'neovim/nvim-lspconfig'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -46,8 +42,7 @@ endif
 "let g:edge_enable_italic = 0
 "let g:edge_transparent_background = 0
 "let g:edge_disable_italic_comment = 1
-let g:dracula_italic = 0
-colorscheme dracula
+colorscheme hotline
 
 highlight LineNr guibg=NONE
 
@@ -94,7 +89,7 @@ hi ErrorMsg NONE
 
 
 se cul
-hi clear CursorLine
+hi clear CursorLineNr
 hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
 
 "templates
