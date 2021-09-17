@@ -452,3 +452,18 @@ mode "move" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
+
+
+# Keyboard layout:
+set $keyboard_layout Keyboard Layout: (r) Romanian, (e) US English
+mode "$keyboard_layout" {
+
+bindsym r exec --no-startup-id setxkbmap ro std ,mode "default"
+bindsym e exec --no-startup-id setxkbmap us ,mode "default"
+
+# back to normal: Enter or Escape
+bindsym Return mode "default"
+bindsym Escape mode "default"
+}
+bindsym $mod+shift+Z mode "$keyboard_layout"

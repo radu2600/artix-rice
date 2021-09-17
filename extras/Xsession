@@ -60,12 +60,12 @@ if [ -x "$script" -a ! -d "$script" ]; then
 fi
 
 # Trying to fix gvfs
-if which dbus-run-session >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS";
-
-then
-
-eval "$(dbus-launch --sh-syntax --exit-with-session)"
-fi
+#if which dbus-run-session >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS";
+#
+#then
+#
+#eval "$(dbus-launch --sh-syntax --exit-with-session)"
+#fi
 
 setxkbmap -option caps:escape
 
