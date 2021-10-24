@@ -7,11 +7,11 @@ env:
 font:
   # Normal (roman) font face
   normal:
-    family: Mononoki Nerd Font
-    style: Regular
+    family: SF Mono
+    style: Medium
 
   bold:
-    family: Mononoki Nerd Font
+    family: SF Mono
     style: Bold
 
   italic:
@@ -22,49 +22,36 @@ font:
     family: Mononoki Nerd Font
 
   # Point size
-  size: 12.0
+  size: 10.0
 
 background_opacity: 0.95
 
+# Colors (Molokai Dark)
 colors:
+  # Default colors
   primary:
-    background: '0x191622'
-    foreground: '0xe1e1e6'
-
-  cursor:
-    text: '0x191622'
-    cursor: '0xf8f8f2'
-
+    background: '#1B1D1E'
+    foreground: '#F8F8F2'
+  # Normal colors
   normal:
-    black: '0x000000'
-    red: '0xff5555'
-    green: '0x50fa7b'
-    yellow: '0xeffa78'
-    blue: '0xbd93f9'
-    magenta: '0xff79c6'
-    cyan: '0x8d79ba'
-    white: '0xbfbfbf'
-
+    black:   '#333333'
+    red:     '#C4265E'
+    green:   '#86B42B'
+    yellow:  '#B3B42B'
+    blue:    '#6A7EC8'
+    magenta: '#8C6BC8'
+    cyan:    '#56ADBC'
+    white:   '#E3E3DD'
+  # Bright colors
   bright:
-    black: '0x4d4d4d'
-    red: '0xff6e67'
-    green: '0x5af78e'
-    yellow: '0xeaf08d'
-    blue: '0xcaa9fa'
-    magenta: '0xff92d0'
-    cyan: '0xaa91e3'
-    white: '0xe6e6e6'
-
-  dim:
-    black: '0x000000'
-    red: '0xa90000'
-    green: '0x049f2b'
-    yellow: '0xa3b106'
-    blue: '0x530aba'
-    magenta: '0xbb006b'
-    cyan: '0x433364'
-    white: '0x5f5f5f'
-
+    black:   '#666666'
+    red:     '#F92672'
+    green:   '#A6E22E'
+    yellow:  '#E2E22E'
+    blue:    '#819AFF'
+    magenta: '#AE81FF'
+    cyan:    '#66D9EF'
+    white:   '#F8F8F2'
 #key_bindings:
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }

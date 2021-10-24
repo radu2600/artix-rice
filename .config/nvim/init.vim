@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
  Plug 'itchyny/lightline.vim'     
  "Themes
  Plug 'epmor/hotline-vim'
+ Plug 'joshdick/onedark.vim'
  ""LSP
  Plug 'neovim/nvim-lspconfig'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -38,11 +39,7 @@ syntax on
 if has('termguicolors')
   set termguicolors
 endif
-"let g:edge_style = 'neon'
-"let g:edge_enable_italic = 0
-"let g:edge_transparent_background = 0
-"let g:edge_disable_italic_comment = 1
-colorscheme hotline
+colorscheme onedark
 
 highlight LineNr guibg=NONE
 
@@ -53,7 +50,7 @@ set expandtab
 set ai
 
 let g:lightline = {
-      \ 'colorscheme': 'darcula',
+      \ 'colorscheme': 'onedark',
       \ 'component': {
       \   'filename': '%F',
       \ }
@@ -88,7 +85,7 @@ hi Error NONE
 hi ErrorMsg NONE
 
 
-se cul
+"se cul
 hi clear CursorLineNr
 hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
 
