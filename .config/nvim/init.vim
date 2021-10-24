@@ -16,9 +16,13 @@ call plug#begin('~/.vim/plugged')
  Plug 'sainnhe/edge'
  Plug 'dracula/vim'
  Plug 'epmor/hotline-vim'
+ Plug 'mhartington/oceanic-next'
+ Plug 'w0ng/vim-hybrid'
+
  "LSP
  Plug 'neovim/nvim-lspconfig'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 
  Plug 'preservim/nerdtree'
  Plug 'nvim-lua/completion-nvim'
@@ -40,17 +44,21 @@ syntax on
  
 " Set colorscheme
 "colorscheme ghdark
-if has('termguicolors')
-  set termguicolors
+if (has("termguicolors"))
+ set termguicolors
 endif
-"let g:edge_style = 'neon'
-"let g:edge_enable_italic = 0
-"let g:edge_transparent_background = 0
-"let g:edge_disable_italic_comment = 1
-let g:dracula_italic = 0
-colorscheme hotline
 
-highlight LineNr guibg=NONE
+syntax enable
+colorscheme hybrid
+set nocursorline
+
+hi Normal guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
+hi SignColumn guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
+
+
+"highlight LineNr guibg=NONE
 
 set mouse=a
 set ts=4 sw=4 sts=4
@@ -72,7 +80,7 @@ set laststatus=2
 set t_Co=256
 let g:rehash256 = 1
 set background=dark
-set termguicolors
+"set termguicolors
 
 set completeopt-=preview
 
@@ -94,7 +102,7 @@ hi Error NONE
 hi ErrorMsg NONE
 
 
-se cul
+"se cul
 hi clear CursorLineNr
 hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
 
@@ -106,7 +114,6 @@ hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
 " LSP stuff
 "
 lua << EOF
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
@@ -168,12 +175,16 @@ function GetFileType()
     if curr_file ==# "html"
         return ":!brave %"
     endif
+    if curr_file ==# "tex"
+        return ":!pdflatex % && mupdf %:r.pdf"
 endfunction
 
 nnoremap <C-x> :<C-R>= GetFileType()<CR> <Enter>
 nnoremap <C-z> <Enter>
 
-set guicursor =i:block
+"set guicursor =i:block
 
 let b:coc_diagnostic_disable = 1
+
+"let g:livepreview_previewer = 'mupdf'
 
