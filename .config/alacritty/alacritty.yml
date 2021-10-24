@@ -7,8 +7,8 @@ env:
 font:
   # Normal (roman) font face
   normal:
-    family: DroidSansMono Nerd Font Mono
-    style: Regular
+    family: SF Mono
+    style: Medium
 
   bold:
     family: DroidSansMono Nerd Font Mono

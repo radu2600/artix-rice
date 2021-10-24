@@ -16,7 +16,6 @@ call plug#begin('~/.vim/plugged')
  Plug 'sainnhe/edge'
  Plug 'dracula/vim'
  Plug 'epmor/hotline-vim'
- Plug 'mhartington/oceanic-next'
  Plug 'w0ng/vim-hybrid'
 
  "LSP
@@ -52,13 +51,13 @@ syntax enable
 colorscheme hybrid
 set nocursorline
 
-hi Normal guibg=NONE ctermbg=NONE
-hi LineNr guibg=NONE ctermbg=NONE
-hi SignColumn guibg=NONE ctermbg=NONE
-hi EndOfBuffer guibg=NONE ctermbg=NONE
+"hi Normal guibg=NONE ctermbg=NONE
+"hi LineNr guibg=NONE ctermbg=NONE
+"hi SignColumn guibg=NONE ctermbg=NONE
+"hi EndOfBuffer guibg=NONE ctermbg=NONE
 
 
-"highlight LineNr guibg=NONE
+highlight LineNr guibg=NONE
 
 set mouse=a
 set ts=4 sw=4 sts=4
@@ -103,7 +102,7 @@ hi ErrorMsg NONE
 
 
 "se cul
-hi clear CursorLineNr
+"hi clear CursorLineNr
 hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
 
 "templates
