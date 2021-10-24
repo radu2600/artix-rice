@@ -17,6 +17,7 @@ call plug#begin('~/.vim/plugged')
  Plug 'dracula/vim'
  Plug 'epmor/hotline-vim'
  Plug 'w0ng/vim-hybrid'
+ Plug 'joshdick/onedark.vim'
 
  "LSP
  Plug 'neovim/nvim-lspconfig'
@@ -48,7 +49,7 @@ if (has("termguicolors"))
 endif
 
 syntax enable
-colorscheme hybrid
+colorscheme onedark
 set nocursorline
 
 "hi Normal guibg=NONE ctermbg=NONE
@@ -66,7 +67,7 @@ set expandtab
 set ai
 
 let g:lightline = {
-      \ 'colorscheme': 'darcula',
+      \ 'colorscheme': 'onedark',
       \ 'component': {
       \   'filename': '%F',
       \ }
@@ -185,5 +186,4 @@ nnoremap <C-z> <Enter>
 
 let b:coc_diagnostic_disable = 1
 
-"let g:livepreview_previewer = 'mupdf'
 
