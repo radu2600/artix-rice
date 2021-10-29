@@ -16,8 +16,8 @@ call plug#begin('~/.vim/plugged')
  Plug 'sainnhe/edge'
  Plug 'dracula/vim'
  Plug 'epmor/hotline-vim'
- Plug 'w0ng/vim-hybrid'
  Plug 'joshdick/onedark.vim'
+ Plug 'tomasr/molokai'
 
  "LSP
  Plug 'neovim/nvim-lspconfig'
@@ -49,7 +49,7 @@ if (has("termguicolors"))
 endif
 
 syntax enable
-colorscheme onedark
+colorscheme molokai
 set nocursorline
 
 "hi Normal guibg=NONE ctermbg=NONE
@@ -182,7 +182,7 @@ endfunction
 nnoremap <C-x> :<C-R>= GetFileType()<CR> <Enter>
 nnoremap <C-z> <Enter>
 
-"set guicursor =i:block
+set guicursor =i:block
 
 let b:coc_diagnostic_disable = 1
 
