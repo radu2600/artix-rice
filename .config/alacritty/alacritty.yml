@@ -24,34 +24,36 @@ font:
   # Point size
   size: 10.0
 
-background_opacity: 0.95
+background_opacity: 0.85
 
-# Colors (Molokai Dark)
+# Colors (Dracula)
 colors:
   # Default colors
   primary:
-    background: '#1B1D1E'
-    foreground: '#F8F8F2'
+    background: '#282a36'
+    foreground: '#f8f8f2'
+
   # Normal colors
   normal:
-    black:   '#333333'
-    red:     '#C4265E'
-    green:   '#86B42B'
-    yellow:  '#B3B42B'
-    blue:    '#6A7EC8'
-    magenta: '#8C6BC8'
-    cyan:    '#56ADBC'
-    white:   '#E3E3DD'
+    black:   '#000000'
+    red:     '#ff5555'
+    green:   '#50fa7b'
+    yellow:  '#f1fa8c'
+    blue:    '#caa9fa'
+    magenta: '#ff79c6'
+    cyan:    '#8be9fd'
+    white:   '#bfbfbf'
+
   # Bright colors
   bright:
-    black:   '#666666'
-    red:     '#F92672'
-    green:   '#A6E22E'
-    yellow:  '#E2E22E'
-    blue:    '#819AFF'
-    magenta: '#AE81FF'
-    cyan:    '#66D9EF'
-    white:   '#F8F8F2'
+    black:   '#575b70'
+    red:     '#ff6e67'
+    green:   '#5af78e'
+    yellow:  '#f4f99d'
+    blue:    '#caa9fa'
+    magenta: '#ff92d0'
+    cyan:    '#9aedfe'
+    white:   '#e6e6e6'
 #key_bindings:
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }

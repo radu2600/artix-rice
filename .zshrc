@@ -105,6 +105,7 @@ alias nv="nvim"
 alias snv="sudo nvim"
 alias vi="vim"
 alias sp="sudo pacman"
+alias ls="lsd"
 #
     # vim mode config
     # ---------------
