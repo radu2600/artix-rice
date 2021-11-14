@@ -18,6 +18,8 @@ call plug#begin('~/.vim/plugged')
  Plug 'epmor/hotline-vim'
  Plug 'joshdick/onedark.vim'
  Plug 'tomasr/molokai'
+ Plug 'jonathanfilip/vim-lucius'
+
 
  "LSP
  Plug 'neovim/nvim-lspconfig'
@@ -44,12 +46,12 @@ syntax on
  
 " Set colorscheme
 "colorscheme ghdark
-if (has("termguicolors"))
- set termguicolors
-endif
+"if (has("termguicolors"))
+ "set termguicolors
+"endif
 
 syntax enable
-colorscheme molokai
+colorscheme default
 set nocursorline
 
 "hi Normal guibg=NONE ctermbg=NONE
@@ -186,4 +188,5 @@ set guicursor =i:block
 
 let b:coc_diagnostic_disable = 1
 
+set signcolumn=no
 

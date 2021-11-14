@@ -414,8 +414,8 @@ mode "$mode_gaps_left" {
 
 #Activate gaps
 for_window [class="^.*"] border pixel 2
-gaps inner 10
-gaps outer 10
+gaps inner 7
+gaps outer 7
 
 # Set shut down, restart and locking features
 # exit i3 (logs you out of your X session)
@@ -453,3 +453,17 @@ mode "move" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
+# Keyboard layout:
+set $keyboard_layout Keyboard Layout: (r) Romanian, (e) US English
+mode "$keyboard_layout" {
+
+bindsym r exec --no-startup-id setxkbmap ro std ,mode "default"
+bindsym e exec --no-startup-id setxkbmap us ,mode "default"
+
+# back to normal: Enter or Escape
+bindsym Return mode "default"
+bindsym Escape mode "default"
+}
+bindsym $mod+shift+Z mode "$keyboard_layout"
+
