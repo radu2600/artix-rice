@@ -9,22 +9,11 @@ call plug#begin('~/.vim/plugged')
  Plug 'jiangmiao/auto-pairs'
  "Bar
  Plug 'itchyny/lightline.vim'     
- "Themes
- "Plug 'chriskempson/base16-vim'
- "Plug 'nanotech/jellybeans.vim'
- "Plug 'wojciechkepka/vim-github-dark'
- Plug 'sainnhe/edge'
- Plug 'dracula/vim'
- Plug 'epmor/hotline-vim'
- Plug 'joshdick/onedark.vim'
- Plug 'tomasr/molokai'
- Plug 'jonathanfilip/vim-lucius'
-
-
  "LSP
  Plug 'neovim/nvim-lspconfig'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+ Plug 'joshdick/onedark.vim'
+ Plug 'drsooch/gruber-darker-vim'
 
  Plug 'preservim/nerdtree'
  Plug 'nvim-lua/completion-nvim'
@@ -45,20 +34,14 @@ set number relativenumber
 syntax on
  
 " Set colorscheme
-"colorscheme ghdark
-"if (has("termguicolors"))
- "set termguicolors
-"endif
-
 syntax enable
-colorscheme default
+colorscheme GruberDarker
 set nocursorline
 
 "hi Normal guibg=NONE ctermbg=NONE
 "hi LineNr guibg=NONE ctermbg=NONE
 "hi SignColumn guibg=NONE ctermbg=NONE
 "hi EndOfBuffer guibg=NONE ctermbg=NONE
-
 
 highlight LineNr guibg=NONE
 
@@ -80,7 +63,7 @@ set laststatus=2
 
 "Terminal colors 256
 set t_Co=256
-let g:rehash256 = 1
+"let g:rehash256 = 1
 set background=dark
 "set termguicolors
 
@@ -110,7 +93,6 @@ hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
 
 "templates
 :autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
-
 
 
 " LSP stuff
@@ -159,6 +141,7 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") 
       \ && b:NERDTree.isTabTree()) | q | endif
 
+"
 "Compile function
 function GetFileType()
     let curr_file = &filetype
@@ -189,4 +172,3 @@ set guicursor =i:block
 let b:coc_diagnostic_disable = 1
 
 set signcolumn=no
-
