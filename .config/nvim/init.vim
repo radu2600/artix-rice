@@ -93,6 +93,7 @@ hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
 
 "templates
 :autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
+:autocmd BufNewFile *.c 0r ~/.vim/templates/skeleton.c
 
 
 " LSP stuff
