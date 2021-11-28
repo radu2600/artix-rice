@@ -12,6 +12,8 @@ call plug#begin('~/.vim/plugged')
  "Themes
  Plug 'epmor/hotline-vim'
  Plug 'joshdick/onedark.vim'
+ Plug 'drsooch/gruber-darker-vim'
+
  ""LSP
  Plug 'neovim/nvim-lspconfig'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -36,10 +38,8 @@ syntax on
  
 " Set colorscheme
 "colorscheme ghdark
-if has('termguicolors')
-  set termguicolors
-endif
-colorscheme onedark
+syntax enable
+colorscheme GruberDarker
 
 highlight LineNr guibg=NONE
 

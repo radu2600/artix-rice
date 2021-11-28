@@ -191,9 +191,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused          #693a7c #693a7c #F8F8F2 #693a7c   #693a7c
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
 client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
@@ -201,37 +200,34 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
 
-exec_always --no-startup-id ~/.config/polybar/launch.sh &
+    bar {
+           status_command /usr/bin/bumblebee-status -m sensors cpu pasink nic disk:root \
+             disk:home memory arch-update weather date time \
+            -p nvidiagpu.format='GPU: {temp}°C' \
+            -p weather.location="Brasov" weather.showcity=false \
+            -p root.path=/ time.format="%H:%M:%S " date.format="%a, %d.%m.%Y" \
+            -p home.path=/home disk.format='{used}/{size}' nic.format='{state}'  \
+            -p memory.format='{used}/{total}' sensors.show_freq=false\
+            -t greyish-powerline
 
-
-       #bar {
-           #status_command /usr/bin/bumblebee-status -m battery sensors cpu pasink nic disk:root \
-             #disk:home memory arch-update weather date time \
-            #-p nvidiagpu.format='GPU: {temp}°C' \
-            #-p weather.location="Brasov" weather.showcity=false \
-            #-p root.path=/ time.format="%H:%M:%S " date.format="%a, %d.%m.%Y" \
-            #-p home.path=/home disk.format='{used}/{size}' nic.format='{state}'  \
-            #-p memory.format='{used}/{total}' sensors.show_freq=false\
-            #-t greyish-powerline
-
-              #font pango: mononoki Nerd Font 9
-              #position top 
-             #colors {
+              font pango: mononoki Nerd Font 11
+              position top 
+             colors {
                #background #282A36
                #background #1d1c1d
-               #statusline #F8F8F2
-               #separator  #44475A
+               statusline #F8F8F2
+               separator  #44475A
 
-               #focused_workspace   #b536f0 #693a7c #F8F8F2
+               focused_workspace   #b536f0 #693a7c #F8F8F2
                #active_workspace   #282A36 #44475A #F8F8F2
                #inactive_workspace #282A36 #282A36 #BFBFBF
                #urgent_workspace   #FF5555 #FF5555 #F8F8F2
                #binding_mode       #FF5555 #FF5555 #F8F8F2
-             #}
-    #}
+             }
+    }
 
 #Change wallpaperi
-exec_always --no-startup-id feh --bg-fill ~/Downloads/download.jpg
+exec_always --no-startup-id feh --bg-fill ~/Desktop/XCx0bJS.jpeg
 
 #Disable mouse accel
 exec_always --no-startup-id xinput --set-prop 12 'libinput Accel Speed' -0.7
@@ -419,8 +415,8 @@ mode "$mode_gaps_left" {
 
 #Activate gaps
 for_window [class="^.*"] border pixel 2
-gaps inner 10
-gaps outer 10
+gaps inner 5
+gaps outer 5
 
 # Set shut down, restart and locking features
 # exit i3 (logs you out of your X session)
