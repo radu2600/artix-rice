@@ -225,7 +225,7 @@ client.background       #F8F8F2
     }
 
 #Change wallpaperi
-exec_always --no-startup-id feh --bg-fill ~/Desktop/NyaITD5.png
+exec_always --no-startup-id feh --bg-fill ~/Desktop/XCx0bJS.jpeg
 
 #Disable mouse accel
 exec_always --no-startup-id xinput --set-prop 12 'libinput Accel Speed' -0.7
@@ -274,7 +274,6 @@ bindsym --release button2 kill
 
 #Set floating for some windows
 for_window [class="Lxappearance"] floating enable
-for_window [class="Pcmanfm"] floating enable
 for_window [class="Eog"] floating enable
 for_window [class="Gnome-system-monitor"] floating enable
 for_window [class="Nvidia-settings"] floating enable
@@ -284,6 +283,7 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="Xfce4-taskmanager"] floating enable
 for_window [class="Audacious"] floating enable
 for_window [class="budget-reminder"] floating enable
+for_window [class="qelsius"] floating enable
 
 for_window [class="Steam"] floating enable
 

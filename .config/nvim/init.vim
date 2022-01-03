@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'joshdick/onedark.vim'
  Plug 'drsooch/gruber-darker-vim'
+ Plug 'chriskempson/base16-vim'
 
  Plug 'preservim/nerdtree'
  Plug 'nvim-lua/completion-nvim'
@@ -35,15 +36,14 @@ syntax on
  
 " Set colorscheme
 syntax enable
-colorscheme GruberDarker
+colorscheme base16-synth-midnight-dark
 set nocursorline
 
 "hi Normal guibg=NONE ctermbg=NONE
-"hi LineNr guibg=NONE ctermbg=NONE
+
 "hi SignColumn guibg=NONE ctermbg=NONE
 "hi EndOfBuffer guibg=NONE ctermbg=NONE
 
-highlight LineNr guibg=NONE
 
 set mouse=a
 set ts=4 sw=4 sts=4
@@ -65,7 +65,7 @@ set laststatus=2
 set t_Co=256
 "let g:rehash256 = 1
 set background=dark
-"set termguicolors
+set termguicolors
 
 set completeopt-=preview
 
@@ -88,8 +88,10 @@ hi ErrorMsg NONE
 
 
 "se cul
-"hi clear CursorLineNr
-hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
+hi clear CursorLineNr
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+"hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
+
 
 "templates
 :autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
@@ -168,7 +170,7 @@ endfunction
 nnoremap <C-x> :<C-R>= GetFileType()<CR> <Enter>
 nnoremap <C-z> <Enter>
 
-set guicursor =i:block
+"set guicursor =i:block
 
 let b:coc_diagnostic_disable = 1
 
