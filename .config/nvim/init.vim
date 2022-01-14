@@ -36,7 +36,8 @@ syntax on
  
 " Set colorscheme
 syntax enable
-colorscheme base16-synth-midnight-dark
+"colorscheme base16-synth-midnight-dark
+colorscheme onedark
 set nocursorline
 
 "hi Normal guibg=NONE ctermbg=NONE
@@ -87,10 +88,10 @@ hi Error NONE
 hi ErrorMsg NONE
 
 
-"se cul
-hi clear CursorLineNr
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
-"hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
+se cul
+"hi clear CursorLineNr
+"highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
 
 
 "templates
@@ -170,8 +171,9 @@ endfunction
 nnoremap <C-x> :<C-R>= GetFileType()<CR> <Enter>
 nnoremap <C-z> <Enter>
 
-"set guicursor =i:block
+set guicursor =i:block
 
 let b:coc_diagnostic_disable = 1
+
 
 set signcolumn=no

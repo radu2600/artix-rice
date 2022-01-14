@@ -144,3 +144,4 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
 export PATH="$HOME/.local/bin:$PATH"
+[ -f "/home/radu/.ghcup/env" ] && source "/home/radu/.ghcup/env" # ghcup-env

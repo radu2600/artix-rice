@@ -7,11 +7,11 @@ env:
 font:
   # Normal (roman) font face
   normal:
-    family: Ubuntu Mono
-    style: Medium
+    family: JetBrains Mono NL
+    style: Regular
 
   bold:
-    family: Ubuntu Mono
+    family: JetBrains Mono NL
     style: Semibold
 
   italic:
@@ -23,7 +23,7 @@ font:
     family: SF Mono
 
   # Point size
-  size: 14.5
+  size: 12
 
 background_opacity: 0.85
 colors:
