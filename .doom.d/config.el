@@ -6,12 +6,22 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
+;;
 
-(setq doom-font (font-spec :family "JetBrains Mono NL" :size 16)       doom-variable-pitch-font (font-spec :family "JetBrains Mono NL" :size 15)       doom-big-font (font-spec :family "JetBrains Mono NL" :size 24))
+(setq lsp-clients-clangd-args '("-j=3"
+                                "--background-index"
+                                "--clang-tidy"
+                                "--completion-style=detailed"
+                                "--header-insertion=never"
+                                "--header-insertion-decorators=0"))
+(after! lsp-clangd (set-lsp-priority! 'clangd 2))
+
+(setq doom-font (font-spec :family "JetBrains Mono NL" :size 16)       doom-variable-pitch-font (font-spec :family "JetBrains Mono NL" :size 16)       doom-big-font (font-spec :family "JetBrains Mono NL" :size 24))
 
 ;; Instant auto completion
 ;;(setq company-dabbrev-downcase 0)
 ;;(setq company-idle-delay 0)
+(setq! lsp-enable-file-watchers nil)
 
 ;; Sets relative line numbers
 (setq display-line-numbers-mode t)
@@ -20,12 +30,20 @@
 
 (setq sp-highlight-pair-overlay nil)
 
+(setq lsp-enable-symbol-highlighting nil)
+(setq lsp-enable-snippet nil)
+
 ;; Disables current line highlighting
 (remove-hook 'doom-first-buffer-hook #'global-hl-line-mode)
 
 (setq evil-insert-state-cursor '(box "lightblue")
-      evil-normal-state-cursor '(box "lightblue"))
+      evil-normal-state-cursor
+ '(box "lightblue"))
 
+(after! tex
+  (setq TeX-view-program-selection nil)
+  (setq +latex-viewers '(zathura))
+  (load! "../.emacs.d/modules/lang/latex/+viewers"))
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
@@ -42,7 +60,8 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+;;(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-ir-black)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
