@@ -51,7 +51,7 @@ bindsym $mod+Shift+i exec --no-startup-id librewolf
 bindsym $mod+Shift+p exec --no-startup-id pavucontrol
 bindsym $mod+Shift+m exec --no-startup-id exec alacritty -e "calcurse"
 bindsym $mod+Shift+f exec --no-startup-id exec alacritty -e "ranger"
-bindsym $mod+Shift+u exec --no-startup-id exec audacious
+bindsym $mod+Shift+u exec --no-startup-id exec emacs
 
 
 # start dmenu (a program launcher)
