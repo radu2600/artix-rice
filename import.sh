@@ -10,4 +10,4 @@ cp ./.config/picom.conf $HOME/.config/picom.conf
 cp ./.zshrc $HOME/.zshrc
 cp ./.tmux.conf $HOME/.tmux.conf
 cp ./.bashrc $HOME/.bashrc
-cp ./.doom.d $HOME/.doom.d
+cp ./.doom.d $HOME/
