@@ -49,6 +49,19 @@
   (setq +latex-viewers '(pdf-tools))
   (load! "../.emacs.d/modules/lang/latex/+viewers"))
 
+;;Change autocompletion bindings
+
+(use-package! company
+  :after lsp-mode
+  :hook (lsp-mode . company-mode)
+  :bind (:map company-active-map
+         ("<tab>" . company-complete-selection))
+        (:map lsp-mode-map
+         ("<tab>" . company-indent-or-complete-common))
+  :custom
+  (company-minimum-prefix-length 2)
+  (company-idle-delay 0.1))
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
