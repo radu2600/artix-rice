@@ -8,6 +8,7 @@
 ;; clients, file templates and snippets.
 ;;
 
+;;Sets clang as default backed for c/c++
 (setq lsp-clients-clangd-args '("-j=3"
                                 "--background-index"
                                 "--clang-tidy"
@@ -16,20 +17,18 @@
                                 "--header-insertion-decorators=0"))
 (after! lsp-clangd (set-lsp-priority! 'clangd 2))
 
+;;Sets fonts
 (setq doom-font (font-spec :family "JetBrains Mono NL" :size 18 :weight 'light)       doom-variable-pitch-font (font-spec :family "JetBrains Mono NL" :size 18 :weight 'light)
       doom-big-font (font-spec :family "JetBrains Mono NL" :size 24))
 ;;(setq doom-font (font-spec :family "Mononoki Nerd Font" :size 17)       doom-variable-pitch-font (font-spec :family "Mononoki Nerd Font" :size 17)       doom-big-font (font-spec :family "Mononoki Nerd Font" :size 24))
 
-;; Instant auto completion
-;;(setq company-dabbrev-downcase 0)
-;;(setq company-idle-delay 0)
 (setq! lsp-enable-file-watchers nil)
 
 ;; Sets relative line numbers
 (setq display-line-numbers-mode t)
 (setq display-line-numbers-type 'relative)
 
-
+;;Disable highlighting
 (setq sp-highlight-pair-overlay nil)
 
 ;;Lsp configs
@@ -49,8 +48,7 @@
   (setq +latex-viewers '(pdf-tools))
   (load! "../.emacs.d/modules/lang/latex/+viewers"))
 
-;;Change autocompletion bindings
-
+;;Change autocompletion bindings and delay settings
 (use-package! company
   :after lsp-mode
   :hook (lsp-mode . company-mode)
