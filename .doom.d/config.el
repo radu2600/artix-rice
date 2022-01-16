@@ -18,9 +18,15 @@
 (after! lsp-clangd (set-lsp-priority! 'clangd 2))
 
 ;;Sets fonts
-(setq doom-font (font-spec :family "JetBrains Mono NL" :size 18 :weight 'light)       doom-variable-pitch-font (font-spec :family "JetBrains Mono NL" :size 18 :weight 'light)
-      doom-big-font (font-spec :family "JetBrains Mono NL" :size 24))
+;;(setq doom-font (font-spec :family "JetBrains Mono NL" :size 16 :weight 'light)       doom-variable-pitch-font (font-spec :family "JetBrains Mono NL" :size 16 :weight 'light)
+      ;;doom-big-font (font-spec :family "JetBrains Mono NL" :size 24))
 ;;(setq doom-font (font-spec :family "Mononoki Nerd Font" :size 17)       doom-variable-pitch-font (font-spec :family "Mononoki Nerd Font" :size 17)       doom-big-font (font-spec :family "Mononoki Nerd Font" :size 24))
+
+(setq doom-font (font-spec :family "Mononoki Nerd Font" :size 17)
+      doom-big-font (font-spec :family "Mononoki Nerd Font"  :size 21))
+
+;;Don't ask to quit
+(setq confirm-kill-emacs nil)
 
 (setq! lsp-enable-file-watchers nil)
 
@@ -77,7 +83,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 ;;(setq doom-theme 'doom-one)
-(setq doom-theme 'doom-ir-black)
+(setq doom-theme 'doom-snazzy)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
