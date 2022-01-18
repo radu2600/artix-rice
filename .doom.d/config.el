@@ -18,11 +18,7 @@
 (after! lsp-clangd (set-lsp-priority! 'clangd 2))
 
 ;;Sets fonts
-;;(setq doom-font (font-spec :family "JetBrains Mono NL" :size 16 :weight 'light)       doom-variable-pitch-font (font-spec :family "JetBrains Mono NL" :size 16 :weight 'light)
-      ;;doom-big-font (font-spec :family "JetBrains Mono NL" :size 24))
-;;(setq doom-font (font-spec :family "Mononoki Nerd Font" :size 17)       doom-variable-pitch-font (font-spec :family "Mononoki Nerd Font" :size 17)       doom-big-font (font-spec :family "Mononoki Nerd Font" :size 24))
-
-(setq doom-font (font-spec :family "Mononoki Nerd Font" :size 17)
+(setq doom-font (font-spec :family "Mononoki Nerd Font" :size 18)
       doom-big-font (font-spec :family "Mononoki Nerd Font"  :size 21))
 
 ;;Don't ask to quit
