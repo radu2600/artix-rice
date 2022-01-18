@@ -53,7 +53,6 @@ bindsym $mod+Shift+i exec --no-startup-id librewolf
 bindsym $mod+Shift+p exec --no-startup-id pavucontrol
 bindsym $mod+Shift+m exec --no-startup-id exec alacritty -e "calcurse"
 bindsym $mod+Shift+f exec --no-startup-id exec alacritty -e "ranger"
-#bindsym $mod+Shift+u exec --no-startup-id emacsclient -a "" -c
 bindsym $mod+Shift+u exec --no-startup-id emacs
 
 
@@ -193,21 +192,22 @@ bindsym $mod+r mode "resize"
 
 
 # class                 border  bground text    indicator child_border
-client.focused          #693a7c #693a7c #F8F8F2 #693a7c   #693a7c
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
-#
-#client.background       #F8F8F2
-# class                 border  bground text    indicator child_border
-#client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+#client.focused          #000000 #693a7c #F8F8F2 #693a7c   #693a7c
 #client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
 #client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
 #client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
 #client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
-#
+##
 #client.background       #F8F8F2
+
+# class                 border  bground text    indicator child_border
+client.focused          #e1acff #e1acff #F8F8F2 #e1acff   #e1acff
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #1D2330 #1D2330 #BFBFBF #1D2330   #1D2330
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2
 
     #bar {
     #       status_command /usr/bin/bumblebee-status -m sensors cpu pasink nic disk:root \
