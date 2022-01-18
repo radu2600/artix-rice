@@ -45,7 +45,7 @@ format-offset =
 
 [colors]
 ; Dracula theme =========
-background = #282a36
+background = #282c34
 foreground = #f8f8f2
 alert = #bd2c40
 volume-min = #a3be8c
@@ -68,7 +68,7 @@ override-redirect = false
 bottom = false
 fixed-center = true
 width = 100%
-height = 20
+height = 22
 ;offset-x = 1%
 ;offset-y = 1%
 
@@ -97,15 +97,15 @@ module-margin-left = 0
 module-margin-right = 0
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "JetBrains Mono NL:size=10;2"
-font-1 = "JetBrains Mono NL:size=12;3"
+font-0 = "JetBrains Mono NL:size=10:weight=bold;2"
+font-1 = "JetBrains Mono NL:size=11;3"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
 font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
 font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 
 modules-left = i3 xwindow
 modules-center =
-modules-right = temperature1 sep cpu2 sep pulseaudio sep network sep filesystem sep filesystemhome sep memory2 sep pacman-updates sep date sep time
+modules-right = temperature1 sep cpu2 sep pulseaudio sep filesystem sep filesystemhome sep memory2 sep pacman-updates sep date sep time
 
 separator =
 
@@ -219,7 +219,7 @@ ws-icon-default = " "
 format = <label-state> <label-mode>
 
 label-mode = %mode%
-label-mode-padding = 2
+label-mode-padding = 1
 label-mode-foreground = #000000
 label-mode-background = #FFBB00
 
@@ -231,9 +231,9 @@ label-mode-background = #FFBB00
 ; Default: %icon%  %name%
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-background = #693a7c
+label-focused-background = #c678dd
 label-focused-foreground = #F8F8F2
-label-focused-underline = #b536f0
+label-focused-underline = #cc99ff
 label-focused-padding = 1
 
 ; Available tokens:
@@ -244,15 +244,15 @@ label-focused-padding = 1
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
 label-unfocused-padding = 1
-label-unfocused-background = ${colors.background}
-label-unfocused-foreground = #666
+label-unfocused-background = #a9a1e1
+label-unfocused-foreground = #1c1f24
 label-unfocused-underline =
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %icon% %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = 2
+label-visible-padding = 1
 
 ; Available tokens:
 ;   %name%
@@ -260,10 +260,10 @@ label-visible-padding = 2
 ;   %index%
 ; Default: %icon%  %name%
 ; urgent = Workspace with urgency hint set
-label-urgent = %icon% %name%
+label-urgent = %name%
 label-urgent-background = ${self.label-focused-background}
 label-urgent-foreground = #db104e
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -304,75 +304,6 @@ content-background = #668bd7
 ############                       MODULES A-Z                      ############
 ################################################################################
 ################################################################################
-
-[module/arch-aur-updates]
-type = custom/script
-exec = ~/.config/polybar/scripts/check-all-updates.sh
-interval = 1000
-label = Updates: %output%
-format-foreground = #fefefe
-format-background = #8d62ad
-format-prefix = "  "
-format-prefix-foreground = #fefefe
-
-
-[module/aur-updates]
-type = custom/script
-exec = cower -u | wc -l
-interval = 1000
-label = Aur: %output%
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-prefix = "  "
-format-prefix-foreground = #FFBB00
-format-underline = #FFBB00
-
-################################################################################
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-prefix-foreground = #7D49B6
-format-prefix-underline = #7D49B6
-format-underline = #7D49B6
-################################################################################
-
-[module/backlight]
-;https://github.com/jaagr/polybar/wiki/Module:-backlight
-
-type = internal/backlight
-
-; Use the following command to list available cards:
-; $ ls -1 /sys/class/backlight/
-card = intel_backlight
-
-; Available tags:
-;   <label> (default)
-;   <ramp>
-;   <bar>
-format = <label>
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-
-; Available tokens:
-;   %percentage% (default)
-label = %percentage%%
-
-; Only applies if <ramp> is used
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
-
-; Only applies if <bar> is used
-bar-width = 10
-bar-indicator = |
-bar-fill = ─
-bar-empty = ─
 
 ################################################################################
 
@@ -418,73 +349,6 @@ animation-charging-framerate = 750
 
 ################################################################################
 
-[module/compton]
-;https://github.com/jaagr/polybar/wiki/User-contributed-modules#compton
-type = custom/script
-exec = ~/.config/polybar/scripts/compton.sh
-click-left = ~/.config/polybar/scripts/compton-toggle.sh
-interval = 5
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-;format-underline = #00AF02
-
-################################################################################
-
-[module/cpu1]
-;https://github.com/jaagr/polybar/wiki/Module:-cpu
-type = internal/cpu
-; Seconds to sleep between updates
-; Default: 1
-interval = 1
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-;   
-format-prefix = " "
-format-prefix-foreground = #cd1f3f
-format-underline = #645377
-
-; Available tags:
-;   <label> (default)
-;   <bar-load>
-;   <ramp-load>
-;   <ramp-coreload>
-format = <label> <ramp-coreload>
-
-format-padding = 2
-
-; Available tokens:
-;   %percentage% (default) - total cpu load
-;   %percentage-cores% - load percentage for each core
-;   %percentage-core[1-9]% - load percentage for specific core
-label-font = 3
-label = CPU: %percentage%%
-ramp-coreload-0 = ▁
-ramp-coreload-0-font = 3
-ramp-coreload-0-foreground = #aaff77
-ramp-coreload-1 = ▂
-ramp-coreload-1-font = 3
-ramp-coreload-1-foreground = #aaff77
-ramp-coreload-2 = ▃
-ramp-coreload-2-font = 3
-ramp-coreload-2-foreground = #aaff77
-ramp-coreload-3 = ▄
-ramp-coreload-3-font = 3
-ramp-coreload-3-foreground = #aaff77
-ramp-coreload-4 = ▅
-ramp-coreload-4-font = 3
-ramp-coreload-4-foreground = #fba922
-ramp-coreload-5 = ▆
-ramp-coreload-5-font = 3
-ramp-coreload-5-foreground = #fba922
-ramp-coreload-6 = ▇
-ramp-coreload-6-font = 3
-ramp-coreload-6-foreground = #ff5555
-ramp-coreload-7 = █
-ramp-coreload-7-font = 3
-ramp-coreload-7-foreground = #ff5555
-
-################################################################################
-
 [module/cpu2]
 ;https://github.com/jaagr/polybar/wiki/Module:-cpu
 type = internal/cpu
@@ -493,9 +357,10 @@ type = internal/cpu
 interval = 1
 
 format-background = ${colors.background}
-format-foreground = ${colors.foreground}
+;format-foreground = ${colors.foreground}
 format-prefix = " "
 format-prefix-foreground = #4288ae
+format-foreground = #4288ae
 label-padding = 1
 label-font = 1
 format-underline= #869adf
@@ -526,8 +391,8 @@ interval = 1
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
 date = " %a, %d.%m.%Y"
 format-prefix = " "
-format-prefix-foreground = #fefefe
-format-foreground = ${colors.foreground}
+format-prefix-foreground = #cc0099
+format-foreground = #cc0099
 format-background = ${colors.background}
 format-underline = #cc0099
 label = "%date%"
@@ -543,8 +408,8 @@ interval = 1
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
 time =  %H:%M:%S
 format-prefix = " "
-format-prefix-foreground = #fefefe
-format-foreground = ${colors.foreground}
+format-prefix-foreground = #cc99ff
+format-foreground = #cc99ff
 format-background = ${colors.background}
 format-underline = #cc99ff
 label = "%time% "
@@ -577,7 +442,7 @@ spacing = 4
 ;   <bar-used>
 ;   <ramp-capacity>
 format-mounted = <label-mounted>
-format-mounted-foreground = ${colors.foreground}
+format-mounted-foreground = #cc99ff
 format-mounted-background = ${colors.background}
 format-mounted-underline = #cc99ff
 
@@ -630,7 +495,7 @@ spacing = 4
 ;   <bar-used>
 ;   <ramp-capacity>
 format-mounted = <label-mounted>
-format-mounted-foreground = ${colors.foreground}
+format-mounted-foreground = #990099
 format-mounted-background = ${colors.background}
 format-mounted-underline = #990099
 
@@ -657,20 +522,6 @@ format-unmounted-background = ${colors.background}
 
 ################################################################################
 
-[module/kernel]
-type = custom/script
-exec = uname -r
-tail = false
-interval = 1024
-
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-prefix = "  "
-format-prefix-foreground = #0084FF
-format-underline = #4B5665
-
-################################################################################
-
 [module/memory2]
 ;https://github.com/jaagr/polybar/wiki/Module:-memory
 type = internal/memory
@@ -685,11 +536,12 @@ interval = 1
 ;   %mb_free%
 ;   %mb_total%
 label = %gb_used%/%gb_total%
+unknown-as-up = false
 
 format = <label>
 format-prefix = " "
-format-prefix-foreground = #fefefe
-format-foreground = ${colors.foreground}
+format-prefix-foreground = #869adf
+format-foreground = #869adf
 format-underline = #869adf
 format-background = ${colors.background}
 ################################################################################
@@ -711,7 +563,8 @@ format-disconnected-underline = #f12421
 format-connected = <label-connected>
 label-connected-padding = 1
 
-format-disconnected = <label-disconnected>
+format-disconnected = ""
+format-diconnected-prefix = ""
 label-disconnected = Down
 label-disconnected-background = ${colors.background}
 label-disconnected-foreground = ${colors.foreground}
@@ -725,7 +578,7 @@ type = custom/script
 exec = checkupdates | wc -l
 interval = 1000
 label = Updates: %output%
-format-foreground = ${colors.foreground}
+format-foreground = #FFBB00
 format-background = ${colors.background}
 format-prefix = " "
 format-prefix-foreground = #FFBB00
@@ -733,24 +586,10 @@ format-underline = #FFBB00
 
 ################################################################################
 
-[module/pavolume]
-type = custom/script
-tail = true
-label = %output%
-exec = ~/.config/polybar/scripts/pavolume.sh --listen
-click-right = exec pavucontrol
-click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
-scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
-scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-
-################################################################################
-
 [module/sep]
 ; alternative separator
 type = custom/text
-content =  " | "
+content =  " "
 content-foreground = #808080
 content-background =  ${colors.background}
 format-foreground = ${colors.foreground}
@@ -775,8 +614,8 @@ thermal-zone = 2
 ; Default reverts to thermal zone setting
 
 warn-temperature = 70
-format-foreground = #f8f8f2
-format-background = #282a36
+label-foreground = #990099
+format-background = ${colors.background}
 format-underline = #990099
 format-warn = <ramp> <label-warn>
 format-warn-underline = #c7254f
@@ -790,52 +629,7 @@ ramp-1 = 
 ramp-2 = 
 ramp-3 = 
 ramp-4 = 
-ramp-foreground =${colors.foreground}
-
-################################################################################
-
-[module/temperature2]
-type = custom/script
-exec = ~/.config/polybar/scripts/tempcores.sh
-interval = 2
-format-padding = 1
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-underline = #C1B93E
-format-prefix-foreground = #C1B93E
-label =  %output:0:150:%
-
-#################################################################################
-
-[module/wired-network]
-;https://github.com/jaagr/polybar/wiki/Module:-network
-type = internal/network
-interface = enp4s0
-;interface = enp14s0
-interval = 3.0
-
-; Available tokens:
-;   %ifname%    [wireless+wired]
-;   %local_ip%  [wireless+wired]
-;   %essid%     [wireless]
-;   %signal%    [wireless]
-;   %upspeed%   [wireless+wired]
-;   %downspeed% [wireless+wired]
-;   %linkspeed% [wired]
-; Default: %ifname% %local_ip%
-label-connected =  %ifname%
-label-disconnected = %ifname% disconnected
-
-format-connected-foreground = ${colors.foreground}
-format-connected-background = ${colors.background}
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = #55aa55
-format-connected-prefix-background = ${colors.background}
-
-format-disconnected = <label-disconnected>
-format-disconnected-underline = ${colors.alert}
-label-disconnected-foreground = ${colors.foreground}
+ramp-foreground = #990099
 
 ################################################################################
 
@@ -904,28 +698,6 @@ format-background = ${colors.background}
 
 ################################################################################
 
-[module/xkeyboard]
-;https://github.com/jaagr/polybar/wiki/Module:-xkeyboard
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
-format-prefix-background = ${colors.background}
-format-prefix-underline = #3ecfb2
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-
-label-layout = %layout%
-label-layout-underline = #3ecfb2
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.background}
-label-indicator-underline = ${colors.foreground}
-
-
-################################################################################
-
 [module/xwindow]
 ;https://github.com/jaagr/polybar/wiki/Module:-xwindow
 type = internal/xwindow
@@ -949,12 +721,13 @@ use-ui-max = true
 interval = 5
 format-volume =  <label-volume>
 format-volume-prefix = " "
+;format-volume-prefix-color = #cc0099
 format-muted-prefix = " "
 label-muted =  muted
 label-muted-foreground = #666
 
 click-right = pavucontrol
-format-volume-foreground = ${colors.foreground}
+format-volume-foreground = #cc0099
 format-volume-background = ${colors.background}
 format-muted-foreground = ${colors.foreground}
 format-muted-background = ${colors.background}
