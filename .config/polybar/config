@@ -340,11 +340,11 @@ interval = 1
 format-background = ${colors.background}
 ;format-foreground = ${colors.foreground}
 format-prefix = " "
-format-prefix-foreground = #4288ae
-format-foreground = #4288ae
+format-prefix-foreground = #E8b51a
+format-foreground = #E8b51a
 label-padding = 1
 label-font = 1
-format-underline= #869adf
+format-underline= #E8b51a
 
 
 ; Available tags:
@@ -389,10 +389,10 @@ interval = 1
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
 time =  %H:%M:%S
 format-prefix = " "
-format-prefix-foreground = #cc99ff
-format-foreground = #cc99ff
+format-prefix-foreground = #24a7d2
+format-foreground = #24a7d2
 format-background = ${colors.background}
-format-underline = #cc99ff
+format-underline = #24a7d2
 label = "%time% "
 ################################################################################
 
@@ -423,9 +423,9 @@ spacing = 4
 ;   <bar-used>
 ;   <ramp-capacity>
 format-mounted = <label-mounted>
-format-mounted-foreground = #cc99ff
+format-mounted-foreground = #E81a5f
 format-mounted-background = ${colors.background}
-format-mounted-underline = #cc99ff
+format-mounted-underline = #E81a5f
 
 
 ; Available tokens:
@@ -476,9 +476,9 @@ spacing = 4
 ;   <bar-used>
 ;   <ramp-capacity>
 format-mounted = <label-mounted>
-format-mounted-foreground = #990099
+format-mounted-foreground = #Ac0eea
 format-mounted-background = ${colors.background}
-format-mounted-underline = #990099
+format-mounted-underline = #Ac0eea
 
 
 ; Available tokens:
@@ -521,9 +521,9 @@ unknown-as-up = false
 
 format = <label>
 format-prefix = " "
-format-prefix-foreground = #869adf
-format-foreground = #869adf
-format-underline = #869adf
+format-prefix-foreground = #85e842
+format-foreground = #85e842
+format-underline = #85e842
 format-background = ${colors.background}
 ################################################################################
 
@@ -595,14 +595,14 @@ thermal-zone = 2
 ; Default reverts to thermal zone setting
 
 warn-temperature = 70
-label-foreground = #990099
+label-foreground = #1ac4e8
 format-background = ${colors.background}
-format-underline = #990099
+format-underline = #1ac4e8
 format-warn = <ramp> <label-warn>
-format-warn-underline = #c7254f
+format-warn-underline = #1ac4e8
 label = %temperature%
 label-warn =  %temperature%
-label-warn-foreground = #c7254f
+label-warn-foreground = #1ac4e8
 format = <ramp> <label>
 
 ramp-0 = 
@@ -610,7 +610,7 @@ ramp-1 = 
 ramp-2 = 
 ramp-3 = 
 ramp-4 = 
-ramp-foreground = #990099
+ramp-foreground = #1ac4e8
 
 ################################################################################
 
@@ -708,12 +708,12 @@ label-muted =  muted
 label-muted-foreground = #666
 
 click-right = pavucontrol
-format-volume-foreground = #cc0099
+format-volume-foreground = #cc99ff
 format-volume-background = ${colors.background}
 format-muted-foreground = ${colors.foreground}
 format-muted-background = ${colors.background}
-format-muted-underline = #643296
-format-volume-underline = #cc0099
+format-muted-underline = #cc99ff
+format-volume-underline = #cc99ff
 
 ###############################################################################
 # vim:ft=dosini
