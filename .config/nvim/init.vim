@@ -37,7 +37,7 @@ syntax on
 " Set colorscheme
 syntax enable
 "colorscheme base16-synth-midnight-dark
-colorscheme onedark
+colorscheme base16-dracula
 set nocursorline
 
 "hi Normal guibg=NONE ctermbg=NONE
@@ -90,7 +90,7 @@ hi ErrorMsg NONE
 
 se cul
 "hi clear CursorLineNr
-"highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
 
 
