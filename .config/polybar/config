@@ -340,11 +340,11 @@ interval = 1
 format-background = ${colors.background}
 ;format-foreground = ${colors.foreground}
 format-prefix = " "
-format-prefix-foreground = #E8b51a
-format-foreground = #E8b51a
+format-prefix-foreground = #E81a5f
+format-foreground = #E81a5f
 label-padding = 1
 label-font = 1
-format-underline= #E8b51a
+format-underline= #E81a5f
 
 
 ; Available tags:
@@ -372,10 +372,10 @@ interval = 1
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
 date = " %a, %d.%m.%Y"
 format-prefix = " "
-format-prefix-foreground = #cc0099
-format-foreground = #cc0099
+format-prefix-foreground = #cc99ff
+format-foreground = #cc99ff
 format-background = ${colors.background}
-format-underline = #cc0099
+format-underline = #cc99ff
 label = "%date%"
 
 ################################################################################
@@ -389,10 +389,10 @@ interval = 1
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
 time =  %H:%M:%S
 format-prefix = " "
-format-prefix-foreground = #24a7d2
-format-foreground = #24a7d2
+format-prefix-foreground = #00ccff
+format-foreground = #00ccff
 format-background = ${colors.background}
-format-underline = #24a7d2
+format-underline = #00ccff
 label = "%time% "
 ################################################################################
 
@@ -423,9 +423,9 @@ spacing = 4
 ;   <bar-used>
 ;   <ramp-capacity>
 format-mounted = <label-mounted>
-format-mounted-foreground = #E81a5f
+format-mounted-foreground = #E8b51a
 format-mounted-background = ${colors.background}
-format-mounted-underline = #E81a5f
+format-mounted-underline = #E8b51a
 
 
 ; Available tokens:
@@ -476,9 +476,9 @@ spacing = 4
 ;   <bar-used>
 ;   <ramp-capacity>
 format-mounted = <label-mounted>
-format-mounted-foreground = #Ac0eea
+format-mounted-foreground = #a9a1e1
 format-mounted-background = ${colors.background}
-format-mounted-underline = #Ac0eea
+format-mounted-underline = #a9a1e1
 
 
 ; Available tokens:
@@ -559,11 +559,11 @@ type = custom/script
 exec = checkupdates | wc -l
 interval = 1000
 label = Updates: %output%
-format-foreground = #FFBB00
+format-foreground = #ff9900
 format-background = ${colors.background}
 format-prefix = " "
-format-prefix-foreground = #FFBB00
-format-underline = #FFBB00
+format-prefix-foreground = #ff9900
+format-underline = #ff9900
 
 ################################################################################
 
@@ -595,14 +595,14 @@ thermal-zone = 2
 ; Default reverts to thermal zone setting
 
 warn-temperature = 70
-label-foreground = #1ac4e8
+label-foreground = #24a7d2
 format-background = ${colors.background}
-format-underline = #1ac4e8
+format-underline = #24a7d2
 format-warn = <ramp> <label-warn>
-format-warn-underline = #1ac4e8
+format-warn-underline = #24a7d2
 label = %temperature%
 label-warn =  %temperature%
-label-warn-foreground = #1ac4e8
+label-warn-foreground = #24a7d2
 format = <ramp> <label>
 
 ramp-0 = 
@@ -708,12 +708,12 @@ label-muted =  muted
 label-muted-foreground = #666
 
 click-right = pavucontrol
-format-volume-foreground = #cc99ff
+format-volume-foreground = #cc0099
 format-volume-background = ${colors.background}
 format-muted-foreground = ${colors.foreground}
 format-muted-background = ${colors.background}
-format-muted-underline = #cc99ff
-format-volume-underline = #cc99ff
+format-muted-underline = #cc0099
+format-volume-underline = #cc0099
 
 ###############################################################################
 # vim:ft=dosini

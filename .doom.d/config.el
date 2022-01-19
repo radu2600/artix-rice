@@ -18,8 +18,8 @@
 (after! lsp-clangd (set-lsp-priority! 'clangd 2))
 
 ;;Sets fonts
-(setq doom-font (font-spec :family "Mononoki Nerd Font" :size 18)
-      doom-big-font (font-spec :family "Mononoki Nerd Font"  :size 21))
+(setq doom-font (font-spec :family "mononoki Nerd Font" :size 18)
+      doom-big-font (font-spec :family "mononoki Nerd Font"  :size 21))
 
 ;;Don't ask to quit
 (setq confirm-kill-emacs nil)
