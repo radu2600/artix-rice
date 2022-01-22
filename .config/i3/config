@@ -237,7 +237,7 @@ client.background       #F8F8F2
     #}
 
 #Change wallpaperi
-exec_always --no-startup-id feh --bg-fill ~/Downloads/snow.jpg
+exec_always --no-startup-id feh --bg-fill ~/.config/wallpapers/QLEVzIc.jpg
 
 #Disable mouse accel
 exec_always --no-startup-id xinput --set-prop 12 'libinput Accel Speed' -0.7
