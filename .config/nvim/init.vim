@@ -5,6 +5,7 @@ filetype off                  " required
 call plug#begin('~/.vim/plugged')
 
 " Keep Plugin commands between vundle#begin/end.
+ Plug 'junegunn/goyo.vim'
  Plug 'tpope/vim-fugitive'
  Plug 'jiangmiao/auto-pairs'
  "Bar
@@ -13,6 +14,7 @@ call plug#begin('~/.vim/plugged')
  Plug 'epmor/hotline-vim'
  Plug 'joshdick/onedark.vim'
  Plug 'drsooch/gruber-darker-vim'
+ Plug 'chriskempson/base16-vim'
 
  ""LSP
  Plug 'neovim/nvim-lspconfig'
@@ -39,7 +41,8 @@ syntax on
 " Set colorscheme
 "colorscheme ghdark
 syntax enable
-colorscheme GruberDarker
+"colorscheme base16-synth-midnight-dark
+colorscheme base16-dracula
 
 highlight LineNr guibg=NONE
 
@@ -60,9 +63,9 @@ let g:lightline = {
 set laststatus=2
 
 "Terminal colors 256
-set t_Co=256
-let g:rehash256 = 1
-set background=dark
+"set t_Co=256
+"let g:rehash256 = 1
+"set background=dark
 set termguicolors
 
 set completeopt-=preview
@@ -85,8 +88,9 @@ hi Error NONE
 hi ErrorMsg NONE
 
 
-"se cul
-hi clear CursorLineNr
+se cul
+"hi "clear CursorLineNr
+hi cursorline cterm=NONE ctermbg=NONE
 hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
 
 "templates

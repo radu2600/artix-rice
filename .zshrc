@@ -105,7 +105,8 @@ alias nv="nvim"
 alias snv="sudo nvim"
 alias vi="vim"
 alias sp="sudo pacman"
-alias ls="lsd"
+alias yay="paru"
+alias yeet="paru -Rns"
 #
     # vim mode config
     # ---------------
@@ -144,4 +145,4 @@ KEYTIMEOUT=5
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
-
+export PATH="$HOME/.local/bin:$PATH"
