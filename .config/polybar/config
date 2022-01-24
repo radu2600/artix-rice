@@ -407,7 +407,7 @@ mount-0 = /
 
 ; Seconds to sleep between updates
 ; Default: 30
-interval = 30
+interval = 1
 
 ; Display fixed precision values
 ; Default: false
@@ -460,7 +460,7 @@ mount-0 = /home
 
 ; Seconds to sleep between updates
 ; Default: 30
-interval = 30
+interval = 1
 
 ; Display fixed precision values
 ; Default: false

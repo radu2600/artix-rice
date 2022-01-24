@@ -105,6 +105,8 @@ alias nv="nvim"
 alias snv="sudo nvim"
 alias vi="vim"
 alias sp="sudo pacman"
+alias yay="paru"
+alias yeet="paru -Rns"
 #
     # vim mode config
     # ---------------
