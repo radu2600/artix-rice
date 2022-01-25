@@ -89,7 +89,7 @@
 ;; `load-theme' function. This is the default:
 ;;(setq doom-theme 'doom-one)
 ;;(setq doom-theme 'doom-palenight)
-(setq doom-theme 'doom-snazzy)
+(setq doom-theme 'doom-challenger-deep)
 ;;(setq doom-theme 'doom-vibrant)
 ;;(setq doom-theme 'doom-dracula)
 
