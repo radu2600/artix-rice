@@ -26,7 +26,7 @@ format-offset =
 
 [colors]
 ; Dracula theme =========
-background = #282c34
+background = #1E1D2F
 foreground = #f8f8f2
 alert = #bd2c40
 volume-min = #a3be8c
@@ -225,8 +225,8 @@ label-focused-padding = 1
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
 label-unfocused-padding = 1
-label-unfocused-background = #a9a1e1
-label-unfocused-foreground = #1c1f24
+label-unfocused-background = #1E1D2F
+label-unfocused-foreground = #D9E0EE
 label-unfocused-underline =
 
 ; visible = Active workspace on unfocused monitor

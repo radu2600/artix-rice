@@ -7,28 +7,30 @@ env:
 font:
   # Normal (roman) font face
   normal:
-    family: JetBrains Mono NL
+    family: mononoki Nerd Font
     style: Regular
 
   bold:
-    family: JetBrains Mono NL
+    family: mononoki Nerd Font
     style: Semibold
 
   italic:
-    family: SF Mono
+    family: mononoki Nerd Font
     style: Regular Italic
 
   # Bold italic font face
   bold_italic:
-    family: SF Mono
+    family: mononoki Nerd Font
 
   # Point size
-  size: 10
+  size: 11
 
-background_opacity: 0.85
+window:
+  opacity : 0.9
+
 colors:
   primary:
-    background: '#282a36'
+    background: '0x1E1D2F'
     foreground: '#f8f8f2'
     bright_foreground: '#ffffff'
   cursor:
