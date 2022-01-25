@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
  Plug 'joshdick/onedark.vim'
  Plug 'drsooch/gruber-darker-vim'
  Plug 'chriskempson/base16-vim'
+ Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
  Plug 'preservim/nerdtree'
  Plug 'nvim-lua/completion-nvim'
