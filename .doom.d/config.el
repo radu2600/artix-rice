@@ -42,7 +42,6 @@
 (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
 (remove-hook 'doom-first-buffer-hook #'show-paren-mode)
 
-
 ;; Disables current line highlighting
 (remove-hook 'doom-first-buffer-hook #'global-hl-line-mode)
 
