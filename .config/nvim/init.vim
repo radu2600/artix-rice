@@ -15,7 +15,6 @@ call plug#begin('~/.vim/plugged')
  Plug 'joshdick/onedark.vim'
  Plug 'drsooch/gruber-darker-vim'
  Plug 'chriskempson/base16-vim'
- Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
  Plug 'preservim/nerdtree'
  Plug 'nvim-lua/completion-nvim'
@@ -170,7 +169,7 @@ function GetFileType()
 endfunction
 
 nnoremap <C-x> :<C-R>= GetFileType()<CR> <Enter>
-nnoremap <C-z> <Enter>
+nnoremap <C-z> Enter>
 
 set guicursor =i:block
 
