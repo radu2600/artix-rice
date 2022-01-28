@@ -37,6 +37,12 @@
 (setq lsp-enable-symbol-highlighting nil)
 (setq lsp-enable-snippet nil)
 
+;;Parens
+(electric-pair-mode 1)
+(remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
+(remove-hook 'doom-first-buffer-hook #'show-paren-mode)
+
+
 ;; Disables current line highlighting
 (remove-hook 'doom-first-buffer-hook #'global-hl-line-mode)
 
@@ -89,7 +95,9 @@
 ;; `load-theme' function. This is the default:
 ;;(setq doom-theme 'doom-one)
 ;;(setq doom-theme 'doom-palenight)
-(setq doom-theme 'doom-challenger-deep)
+;;(setq doom-theme 'doom-challenger-deep)
+(require 'gruber-darker-theme)
+(load-theme 'gruber-darker t)
 ;;(setq doom-theme 'doom-vibrant)
 ;;(setq doom-theme 'doom-dracula)
 
