@@ -18,7 +18,7 @@
 (after! lsp-clangd (set-lsp-priority! 'clangd 2))
 
 ;;Sets fonts
-(setq doom-font (font-spec :family "mononoki Nerd Font" :size 18)
+(setq doom-font (font-spec :family "DejaVu Sans Mono" :size 18 :weight 'Regular)
       doom-big-font (font-spec :family "mononoki Nerd Font"  :size 21))
 
 ;;Don't ask to quit
@@ -37,7 +37,7 @@
 (setq lsp-enable-symbol-highlighting nil)
 (setq lsp-enable-snippet nil)
 
-;;Parens
+;;Enable electric mode and disable smartparens
 (electric-pair-mode 1)
 (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
 (remove-hook 'doom-first-buffer-hook #'show-paren-mode)
@@ -46,8 +46,8 @@
 (remove-hook 'doom-first-buffer-hook #'global-hl-line-mode)
 
 ;;Change cursor color and mode
-(setq evil-insert-state-cursor '(box "purple")
-      evil-normal-state-cursor '(box "white"))
+(setq evil-insert-state-cursor '(box "purple"))
+      ;;evil-normal-state-cursor '(box "grey"))
 
 ;;Sets pdf-tools as default pdf previewer
 (after! tex
@@ -75,6 +75,10 @@
         )
   )
 
+;;Comint
+(map! :leader
+      :desc "Run comint mode"
+      "c b" #'comint-run)
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -95,10 +99,11 @@
 ;;(setq doom-theme 'doom-one)
 ;;(setq doom-theme 'doom-palenight)
 ;;(setq doom-theme 'doom-challenger-deep)
-(require 'gruber-darker-theme)
-(load-theme 'gruber-darker t)
+;;(require 'gruber-darker-theme)
+;;(load-theme 'gruber-darker t)
 ;;(setq doom-theme 'doom-vibrant)
 ;;(setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-ir-black)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!

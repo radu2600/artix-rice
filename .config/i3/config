@@ -287,18 +287,14 @@ bindsym --release button2 kill
 
 #Set floating for some windows
 for_window [class="Lxappearance"] floating enable
-for_window [class="Eog"] floating enable
 for_window [class="Gnome-system-monitor"] floating enable
 for_window [class="Nvidia-settings"] floating enable
 for_window [class="GParted"] floating enable
 for_window [class="Gnome-control-center"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Xfce4-taskmanager"] floating enable
-for_window [class="Audacious"] floating enable
 for_window [class="budget-reminder"] floating enable
 for_window [class="qelsius"] floating enable
-
-for_window [class="Steam"] floating enable
 
 
 #Gaps
