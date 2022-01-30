@@ -18,8 +18,9 @@
 (after! lsp-clangd (set-lsp-priority! 'clangd 2))
 
 ;;Sets fonts
-(setq doom-font (font-spec :family "DejaVu Sans Mono" :size 18 :weight 'Regular)
+(setq doom-font (font-spec :family "FantasqueSansMono Nerd Font" :size 20 :weight 'Regular)
       doom-big-font (font-spec :family "mononoki Nerd Font"  :size 21))
+;;(setq doom-themes-enable-bold nil)
 
 ;;Don't ask to quit
 (setq confirm-kill-emacs nil)
@@ -46,7 +47,7 @@
 (remove-hook 'doom-first-buffer-hook #'global-hl-line-mode)
 
 ;;Change cursor color and mode
-(setq evil-insert-state-cursor '(box "purple"))
+;;(setq evil-insert-state-cursor '(box "purple"))
       ;;evil-normal-state-cursor '(box "grey"))
 
 ;;Sets pdf-tools as default pdf previewer
