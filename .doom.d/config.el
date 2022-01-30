@@ -79,7 +79,7 @@
 ;;Comint
 (map! :leader
       :desc "Run comint mode"
-      "c b" #'comint-run)
+      "c z" #'comint-run)
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
