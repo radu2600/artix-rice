@@ -8,7 +8,7 @@
 ;; clients, file templates and snippets.
 ;;
 
-;;Sets clang as default backed for c/c++
+;;Sets clang as default backend for c/c++
 (setq lsp-clients-clangd-args '("-j=3"
                                 "--background-index"
                                 "--clang-tidy"
