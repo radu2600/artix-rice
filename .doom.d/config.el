@@ -81,6 +81,40 @@
       :desc "Run comint mode"
       "c z" #'comint-run)
 
+;;Compile snippets
+(add-hook 'c++-mode-hook
+  (lambda ()
+    (unless (file-exists-p "Makefile")
+      (set (make-local-variable 'compile-command)
+       (let ((file (file-name-nondirectory buffer-file-name)))
+         (concat "g++ -Wextra -Wall -o "
+             (file-name-sans-extension file)
+             " " file))))))
+
+(add-hook 'c-mode-hook
+  (lambda ()
+    (unless (file-exists-p "Makefile")
+      (set (make-local-variable 'compile-command)
+       (let ((file (file-name-nondirectory buffer-file-name)))
+         (concat "gcc -Wall -o "
+             (file-name-sans-extension file)
+             " " file))))))
+
+(add-hook 'java-mode-hook
+  (lambda ()
+    (unless (file-exists-p "Makefile")
+      (set (make-local-variable 'compile-command)
+       (let ((file (file-name-nondirectory buffer-file-name)))
+         (concat "java "
+              file))))))
+
+(add-hook 'python-mode-hook
+  (lambda ()
+    (unless (file-exists-p "Makefile")
+      (set (make-local-variable 'compile-command)
+       (let ((file (file-name-nondirectory buffer-file-name)))
+         (concat "python "
+              file))))))
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
 ;;
