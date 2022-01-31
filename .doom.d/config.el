@@ -58,12 +58,12 @@
 
 ;;Change autocompletion bindings and delay settings
 (use-package! company
-  :after lsp-mode
-  :hook (lsp-mode . company-mode)
-  :bind (:map company-active-map
-         ("<tab>" . company-complete-selection))
-        (:map lsp-mode-map
-         ("<tab>" . company-indent-or-complete-common))
+  ;;:after lsp-mode
+  ;;:hook (lsp-mode . company-mode)
+  ;;:bind (:map company-active-map
+  ;;       ("<tab>" . company-complete-selection))
+  ;;      (:map lsp-mode-map
+  ;;       ("<tab>" . company-indent-or-complete-common))
   :custom
   (company-minimum-prefix-length 2)
   (company-idle-delay 0.1))
