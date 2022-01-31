@@ -55,6 +55,7 @@ bindsym $mod+Shift+m exec --no-startup-id exec alacritty -e "calcurse"
 bindsym $mod+Shift+f exec --no-startup-id exec alacritty -e "ranger"
 bindsym $mod+Shift+u exec --no-startup-id emacs
 bindsym $mod+Shift+w exec --no-startup-id qutebrowser
+bindsym $mod+Shift+y exec --no-startup-id "bwmenu -- -location 2 --C"
 
 
 # start dmenu (a program launcher)
