@@ -214,7 +214,7 @@ label-mode-background = #FFBB00
 label-focused = %name%
 label-focused-background = #c678dd
 label-focused-foreground = #F8F8F2
-label-focused-underline = #cc99ff
+label-focused-underline = #50fa7b
 label-focused-padding = 1
 
 ; Available tokens:
@@ -586,7 +586,7 @@ type = internal/temperature
 ; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
 ; Default: 0
 interval = 0.5
-thermal-zone = 2
+thermal-zone = 0
 
 ; Full path of temperature sysfs path
 ; Use `sensors` to find preferred temperature source, then run

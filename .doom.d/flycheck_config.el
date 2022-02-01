@@ -8,7 +8,7 @@
 ;; clients, file templates and snippets.
 ;;
 
-;;Sets clang as default backed for c/c++
+;;Sets clang as default backend for c/c++
 (setq lsp-clients-clangd-args '("-j=3"
                                 "--background-index"
                                 "--clang-tidy"
@@ -18,8 +18,9 @@
 (after! lsp-clangd (set-lsp-priority! 'clangd 2))
 
 ;;Sets fonts
-(setq doom-font (font-spec :family "mononoki Nerd Font" :size 21)
+(setq doom-font (font-spec :family "mononoki Nerd Font" :size 21 :weight 'Regular)
       doom-big-font (font-spec :family "mononoki Nerd Font"  :size 21))
+;;(setq doom-themes-enable-bold nil)
 
 ;;Don't ask to quit
 (setq confirm-kill-emacs nil)
@@ -37,12 +38,17 @@
 (setq lsp-enable-symbol-highlighting nil)
 (setq lsp-enable-snippet nil)
 
+;;Enable electric mode and disable smartparens
+(electric-pair-mode 1)
+(remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
+(remove-hook 'doom-first-buffer-hook #'show-paren-mode)
+
 ;; Disables current line highlighting
 (remove-hook 'doom-first-buffer-hook #'global-hl-line-mode)
 
 ;;Change cursor color and mode
 (setq evil-insert-state-cursor '(box "purple")
-      evil-normal-state-cursor '(box "white"))
+      evil-normal-state-cursor '(box "grey"))
 
 ;;Sets pdf-tools as default pdf previewer
 (after! tex
@@ -52,12 +58,12 @@
 
 ;;Change autocompletion bindings and delay settings
 (use-package! company
-  :after lsp-mode
-  :hook (lsp-mode . company-mode)
-  :bind (:map company-active-map
-         ("<tab>" . company-complete-selection))
-        (:map lsp-mode-map
-         ("<tab>" . company-indent-or-complete-common))
+  ;;:after lsp-mode
+  ;;:hook (lsp-mode . company-mode)
+  ;;:bind (:map company-active-map
+  ;;       ("<tab>" . company-complete-selection))
+  ;;      (:map lsp-mode-map
+  ;;       ("<tab>" . company-indent-or-complete-common))
   :custom
   (company-minimum-prefix-length 2)
   (company-idle-delay 0.1))
@@ -70,6 +76,45 @@
         )
   )
 
+;;Comint
+(map! :leader
+      :desc "Run comint mode"
+      "c z" #'comint-run)
+
+;;Compile snippets
+(add-hook 'c++-mode-hook
+  (lambda ()
+    (unless (file-exists-p "Makefile")
+      (set (make-local-variable 'compile-command)
+       (let ((file (file-name-nondirectory buffer-file-name)))
+         (concat "g++ -Wextra -Wall -o "
+             (file-name-sans-extension file)
+             " " file))))))
+
+(add-hook 'c-mode-hook
+  (lambda ()
+    (unless (file-exists-p "Makefile")
+      (set (make-local-variable 'compile-command)
+       (let ((file (file-name-nondirectory buffer-file-name)))
+         (concat "gcc -Wall -o "
+             (file-name-sans-extension file)
+             " " file))))))
+
+(add-hook 'java-mode-hook
+  (lambda ()
+    (unless (file-exists-p "Makefile")
+      (set (make-local-variable 'compile-command)
+       (let ((file (file-name-nondirectory buffer-file-name)))
+         (concat "java "
+              file))))))
+
+(add-hook 'python-mode-hook
+  (lambda ()
+    (unless (file-exists-p "Makefile")
+      (set (make-local-variable 'compile-command)
+       (let ((file (file-name-nondirectory buffer-file-name)))
+         (concat "python "
+              file))))))
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -88,9 +133,13 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 ;;(setq doom-theme 'doom-one)
-(setq doom-theme 'doom-palenight)
-;;(setq doom-theme 'doom-snazzy)
+;;(setq doom-theme 'doom-palenight)
+;;(setq doom-theme 'doom-challenger-deep)
+;;(require 'gruber-darker-theme)
+;;(load-theme 'gruber-darker t)
 ;;(setq doom-theme 'doom-vibrant)
+;;(setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-ir-black)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
