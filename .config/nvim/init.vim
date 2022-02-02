@@ -13,7 +13,6 @@ call plug#begin('~/.vim/plugged')
  Plug 'neovim/nvim-lspconfig'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'joshdick/onedark.vim'
- Plug 'drsooch/gruber-darker-vim'
  Plug 'chriskempson/base16-vim'
 
  Plug 'preservim/nerdtree'
@@ -36,8 +35,8 @@ syntax on
  
 " Set colorscheme
 syntax enable
-"colorscheme base16-synth-midnight-dark
-colorscheme base16-dracula
+colorscheme base16-synth-midnight-dark
+"colorscheme 256_noir
 set nocursorline
 
 "hi Normal guibg=NONE ctermbg=NONE
@@ -52,12 +51,12 @@ set smartindent
 set expandtab
 set ai
 
-let g:lightline = {
-      \ 'colorscheme': 'onedark',
-      \ 'component': {
-      \   'filename': '%F',
-      \ }
-      \ }
+"let g:lightline = {
+     " \ 'colorscheme': 'onedark',
+     " \ 'component': {
+     " \   'filename': '%F',
+     " \ }
+     " \ }
 
 "Fixing stuff
 set laststatus=2

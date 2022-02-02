@@ -25,13 +25,20 @@ format-margin =
 format-offset =
 
 [colors]
-; Dracula theme =========
-background = #1E1D2F
+background = #2f302f
 foreground = #f8f8f2
 alert = #bd2c40
 volume-min = #a3be8c
 volume-med = #ebcb8b
 volume-max = #bf616a
+col1 = #f8f8f2
+col2 = #85e842
+col3 = #cc0099
+col4 = #ff9900
+col5 = #a9a1e1
+col6 = #E8b51a
+col7 = #E81a5f
+col8 = #00ccff
 
 ################################################################################
 ################################################################################
@@ -78,13 +85,13 @@ module-margin-left = 0
 module-margin-right = 0
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Terminus:size=13:weight=medium;2"
+font-0 = "FantasqueSansMono Nerd Font:size=11;2"
 font-1 = "JetBrains Mono NL:size=11;3"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
 font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
 font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 
-modules-left = i3 xwindow
+modules-left = i3 sep2 xwindow
 modules-center =
 modules-right = temperature1 sep cpu2 sep pulseaudio sep filesystem sep filesystemhome sep memory2 sep pacman-updates sep date sep time
 
@@ -212,9 +219,9 @@ label-mode-background = #FFBB00
 ; Default: %icon%  %name%
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-background = #c678dd
+label-focused-background = #cc2900
 label-focused-foreground = #F8F8F2
-label-focused-underline = #cc99ff
+;label-focused-underline = #cc99ff
 label-focused-padding = 1
 
 ; Available tokens:
@@ -225,7 +232,7 @@ label-focused-padding = 1
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
 label-unfocused-padding = 1
-label-unfocused-background = #1E1D2F
+label-unfocused-background = #2f302f
 label-unfocused-foreground = #D9E0EE
 label-unfocused-underline =
 
@@ -340,11 +347,11 @@ interval = 1
 format-background = ${colors.background}
 ;format-foreground = ${colors.foreground}
 format-prefix = " "
-format-prefix-foreground = #E81a5f
-format-foreground = #E81a5f
+format-prefix-foreground = ${colors.col1}
+format-foreground = ${colors.col1}
 label-padding = 1
 label-font = 1
-format-underline= #E81a5f
+format-underline= ${colors.col1}
 
 
 ; Available tags:
@@ -372,10 +379,10 @@ interval = 1
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
 date = " %a, %d.%m.%Y"
 format-prefix = " "
-format-prefix-foreground = #cc99ff
-format-foreground = #cc99ff
+format-prefix-foreground = ${colors.col1}
+format-foreground = ${colors.col1}
 format-background = ${colors.background}
-format-underline = #cc99ff
+format-underline = ${colors.col1}
 label = "%date%"
 
 ################################################################################
@@ -389,10 +396,10 @@ interval = 1
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
 time =  %H:%M:%S
 format-prefix = " "
-format-prefix-foreground = #00ccff
-format-foreground = #00ccff
+format-prefix-foreground = ${colors.col1}
+format-foreground = ${colors.col1}
 format-background = ${colors.background}
-format-underline = #00ccff
+format-underline = ${colors.col7}
 label = "%time% "
 ################################################################################
 
@@ -423,9 +430,9 @@ spacing = 4
 ;   <bar-used>
 ;   <ramp-capacity>
 format-mounted = <label-mounted>
-format-mounted-foreground = #E8b51a
+format-mounted-foreground = ${colors.col1}
 format-mounted-background = ${colors.background}
-format-mounted-underline = #E8b51a
+format-mounted-underline = ${colors.col1}
 
 
 ; Available tokens:
@@ -476,9 +483,9 @@ spacing = 4
 ;   <bar-used>
 ;   <ramp-capacity>
 format-mounted = <label-mounted>
-format-mounted-foreground = #a9a1e1
+format-mounted-foreground = ${colors.col1}
 format-mounted-background = ${colors.background}
-format-mounted-underline = #a9a1e1
+format-mounted-underline = ${colors.col7}
 
 
 ; Available tokens:
@@ -521,9 +528,9 @@ unknown-as-up = false
 
 format = <label>
 format-prefix = " "
-format-prefix-foreground = #85e842
-format-foreground = #85e842
-format-underline = #85e842
+format-prefix-foreground = ${colors.col1}
+format-foreground = ${colors.col1}
+format-underline = ${colors.col1}
 format-background = ${colors.background}
 ################################################################################
 
@@ -559,11 +566,11 @@ type = custom/script
 exec = checkupdates | wc -l
 interval = 1000
 label = Updates: %output%
-format-foreground = #ff9900
+format-foreground = ${colors.col1}
 format-background = ${colors.background}
 format-prefix = " "
-format-prefix-foreground = #ff9900
-format-underline = #ff9900
+format-prefix-foreground = ${colors.col1}
+format-underline = ${colors.col7}
 
 ################################################################################
 
@@ -572,6 +579,16 @@ format-underline = #ff9900
 type = custom/text
 content =  " "
 content-foreground = #808080
+content-background =  ${colors.background}
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+################################################################################
+[module/sep2]
+; alternative separator
+type = custom/text
+content =  " []="
+content-foreground = ${colors.col1}
 content-background =  ${colors.background}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -595,14 +612,14 @@ thermal-zone = 2
 ; Default reverts to thermal zone setting
 
 warn-temperature = 70
-label-foreground = #24a7d2
+label-foreground = ${colors.col1}
 format-background = ${colors.background}
-format-underline = #24a7d2
+format-underline = ${colors.col7}
 format-warn = <ramp> <label-warn>
-format-warn-underline = #24a7d2
+format-warn-underline = ${colors.col1}
 label = %temperature%
 label-warn =  %temperature%
-label-warn-foreground = #24a7d2
+label-warn-foreground = ${colors.col7}
 format = <ramp> <label>
 
 ramp-0 = 
@@ -610,72 +627,7 @@ ramp-1 = 
 ramp-2 = 
 ramp-3 = 
 ramp-4 = 
-ramp-foreground = #1ac4e8
-
-################################################################################
-
-[module/wireless-network]
-;https://github.com/jaagr/polybar/wiki/Module:-network
-type = internal/network
-interface = ${env:WIRELESS}
-interval = 3.0
-label-connected = %essid%
-
-format-connected = <label-connected>
-;format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = ${colors.foreground}
-format-connected-background = ${colors.background}
-format-connected-prefix = "  "
-format-connected-prefix-foreground = #7e52c6
-format-connected-prefix-background = ${colors.background}
-format-connected-underline = #7e52c6
-
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.alert}
-label-disconnected-background = ${colors.background}
-
-format-disconnected = <label-disconnected>
-format-disconnected-foreground = ${colors.alert}
-format-disconnected-background = ${colors.background}
-format-disconnected-prefix = "  "
-format-disconnected-prefix-foreground = ${colors.alert}
-format-disconnected-prefix-background = ${colors.background}
-format-disconnected-underline =${colors.alert}
-
-ramp-signal-0 = ▁
-ramp-signal-1 = ▂
-ramp-signal-2 = ▃
-ramp-signal-3 = ▄
-ramp-signal-4 = ▅
-ramp-signal-5 = ▆
-ramp-signal-6 = ▇
-ramp-signal-7 = █
-ramp-signal-foreground = #7e52c6
-
-################################################################################
-
-[module/xbacklight]
-;https://github.com/jaagr/polybar/wiki/Module:-xbacklight
-type = internal/xbacklight
-format = <label> <bar>
-format-prefix = "   "
-format-prefix-foreground = ${colors.foreground}
-format-prefix-background = ${colors.background}
-format-prefix-underline = #9f78e1
-format-underline = #9f78e1
-label = %percentage%%
-bar-width = 10
-bar-indicator = 
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = 
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = 
-bar-empty-font = 2
-bar-empty-foreground = #fff
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+ramp-foreground = ${colors.col1}
 
 ################################################################################
 
@@ -690,8 +642,8 @@ label = %title%
 label-maxlen = 50
 
 format-prefix = "  "
-format-prefix-underline = #292d3e
-format-underline = #e1acff
+;format-prefix-underline = #292d3e
+;format-underline = #e1acff
 format-foreground = #f8f8f2
 format-background = ${colors.background}
 
@@ -708,12 +660,12 @@ label-muted =  muted
 label-muted-foreground = #666
 
 click-right = pavucontrol
-format-volume-foreground = #cc0099
+format-volume-foreground = ${colors.col1}
 format-volume-background = ${colors.background}
-format-muted-foreground = ${colors.foreground}
+format-muted-foreground = ${colors.col1}
 format-muted-background = ${colors.background}
 format-muted-underline = #cc0099
-format-volume-underline = #cc0099
+format-volume-underline = ${colors.col7}
 
 ###############################################################################
 # vim:ft=dosini
