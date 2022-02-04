@@ -18,7 +18,7 @@
 (after! lsp-clangd (set-lsp-priority! 'clangd 2))
 
 ;;Sets fonts
-(setq doom-font (font-spec :family "FantasqueSansMono Nerd Font" :size 20 :weight 'Regular)
+(setq doom-font (font-spec :family "Ubuntu Mono" :size 22 :weight 'Regular)
       doom-big-font (font-spec :family "mononoki Nerd Font"  :size 21))
 ;;(setq doom-themes-enable-bold nil)
 
@@ -75,6 +75,9 @@
         org-superstar-item-bullet-alist '((?+ . ?➤) (?- . ?✦)) ; changes +/- symbols in item lists
         )
   )
+
+;;Cursor blinking
+(blink-cursor-mode t)
 
 ;;Comint
 (map! :leader

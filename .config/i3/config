@@ -205,7 +205,7 @@ bindsym $mod+r mode "resize"
 # class                 border  bground text    indicator child_border
 client.focused          #cc2900 #cc2900 #F8F8F2 #cc2900   #cc2900
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #ffffff #ffffff #000000 #1D2330   #1D2330
+client.unfocused        #ffffff #ffffff #000000 #1D2330   #F8F8F8
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
 client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
@@ -424,7 +424,7 @@ mode "$mode_gaps_left" {
 
 #Activate gaps
 for_window [class="^.*"] border pixel 3
-gaps inner 8
+gaps inner 10
 gaps outer 8
 
 # Set shut down, restart and locking features
