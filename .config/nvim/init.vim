@@ -41,8 +41,7 @@ syntax on
 " Set colorscheme
 "colorscheme ghdark
 syntax enable
-"colorscheme base16-synth-midnight-dark
-colorscheme base16-dracula
+colorscheme base16-synth-midnight-dark
 
 highlight LineNr guibg=NONE
 
