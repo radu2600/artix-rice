@@ -18,7 +18,7 @@
 (after! lsp-clangd (set-lsp-priority! 'clangd 2))
 
 ;;Sets fonts
-(setq doom-font (font-spec :family "JuliaMono" :size 18 :weight 'Regular)
+(setq doom-font (font-spec :family "Cascadia Mono" :size 18 :weight 'Regular)
       doom-big-font (font-spec :family "mononoki Nerd Font"  :size 21))
 ;;(setq doom-themes-enable-bold nil)
 
@@ -36,7 +36,7 @@
 
 ;;Lsp configs
 (setq lsp-enable-symbol-highlighting nil)
-(setq lsp-enable-snippet nil)
+(setq lsp-enable-snippet t)
 
 ;;Enable electric mode and disable smartparens
 (electric-pair-mode 1)
@@ -119,30 +119,35 @@
          (concat "python "
               file))))))
 
-;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
-;; are the three important ones:
-;;
-;; + `doom-font'
-;; + `doom-variable-pitch-font'
-;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
-;;   presentations or streaming.
-;;
-;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
-;; font string. You generally only need these two:
-;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
-;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-;;(setq doom-theme 'doom-one)
-;;(setq doom-theme 'doom-palenight)
-;;(setq doom-theme 'doom-challenger-deep)
-;;(require 'gruber-darker-theme)
-;;(load-theme 'gruber-darker t)
-;;(setq doom-theme 'doom-vibrant)
-;;(setq doom-theme 'doom-dracula)
 (setq doom-theme 'doom-acario-light)
+
+
+;;ELFEED setup
+(use-package! elfeed-goodies)
+(elfeed-goodies/setup)
+(setq elfeed-goodies/entry-pane-size 0.5)
+(add-hook 'elfeed-show-mode-hook 'visual-line-mode)
+(evil-define-key 'normal elfeed-show-mode-map
+  (kbd "J") 'elfeed-goodies/split-show-next
+  (kbd "K") 'elfeed-goodies/split-show-prev)
+(evil-define-key 'normal elfeed-search-mode-map
+  (kbd "J") 'elfeed-goodies/split-show-next
+  (kbd "K") 'elfeed-goodies/split-show-prev)
+(setq elfeed-feeds (quote
+                    (("https://www.reddit.com/r/linux.rss" reddit linux)
+                     ("https://opensource.com/feed" opensource linux)
+                     ("https://linux.softpedia.com/backend.xml" softpedia linux)
+                     ("https://itsfoss.com/feed/" itsfoss linux)
+                     ("https://www.reddit.com/r/news.rss" reddit news)
+                     ("https://www.reddit.com/r/worldnews.rss" reddit news)
+                     ("https://distrowatch.com/news/dwd.xml" distrowatch linux))))
+
+
+
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!

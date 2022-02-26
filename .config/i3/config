@@ -296,6 +296,7 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="Xfce4-taskmanager"] floating enable
 for_window [class="budget-reminder"] floating enable
 for_window [class="qelsius"] floating enable
+for_window [class="b-remindR"] floating enable
 
 
 #Gaps
