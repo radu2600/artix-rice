@@ -75,6 +75,13 @@
         org-superstar-item-bullet-alist '((?+ . ?➤) (?- . ?✦)) ; changes +/- symbols in item lists
         )
   )
+(custom-set-faces
+  '(org-level-1 ((t (:inherit outline-1 :height 1.4))))
+  '(org-level-2 ((t (:inherit outline-2 :height 1.3))))
+  '(org-level-3 ((t (:inherit outline-3 :height 1.2))))
+  '(org-level-4 ((t (:inherit outline-4 :height 1.1))))
+  '(org-level-5 ((t (:inherit outline-5 :height 1.0))))
+)
 
 ;;Cursor blinking
 (blink-cursor-mode t)
@@ -145,6 +152,8 @@
                      ("https://www.reddit.com/r/news.rss" reddit news)
                      ("https://www.reddit.com/r/worldnews.rss" reddit news)
                      ("https://distrowatch.com/news/dwd.xml" distrowatch linux))))
+(add-hook! 'elfeed-search-mode-hook 'elfeed-update)
+(setq browse-url-browser-function 'eww-browse-url)
 
 
 
