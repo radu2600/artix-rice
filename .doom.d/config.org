@@ -3,7 +3,7 @@
 #+DESCRIPTION: rmdc10 personal Doom Emacs config.
 #+STARTUP: showeverything
 
-* General settings
+** General settings
 Enable cursor blinking.
 #+BEGIN_SRC emacs-lisp
 (blink-cursor-mode t)
@@ -27,8 +27,13 @@ Focus new window after splitting.
       evil-vsplit-window-right t)
 #+end_src
 
-* LSP/Highlighting settings
-** Snippet and highlighting settings
+Set Monday as first day of the week.
+#+begin_src emacs-lisp
+(setq calendar-week-start-day 1)
+#+end_src
+
+** LSP/Highlighting settings
+*** Snippet and highlighting settings
 #+BEGIN_SRC emacs-lisp
 (setq lsp-enable-symbol-highlighting nil)
 (setq lsp-enable-snippet t)
@@ -38,7 +43,7 @@ Focus new window after splitting.
 (remove-hook 'doom-first-buffer-hook #'global-hl-line-mode)
 #+END_SRC
 
-** Set clang as default backend for c/c++
+*** Set clang as default backend for c/c++
 #+BEGIN_SRC emacs-lisp
 (setq lsp-clients-clangd-args '("-j=3"
                                 "--background-index"
@@ -49,14 +54,14 @@ Focus new window after splitting.
 (after! lsp-clangd (set-lsp-priority! 'clangd 2))
 #+END_SRC
 
-* Electric mode and disable smartparens
+** Electric mode and disable smartparens
 #+BEGIN_SRC emacs-lisp
 (electric-pair-mode 1)
 (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
 (remove-hook 'doom-first-buffer-hook #'show-paren-mode)
 #+END_SRC
 
-* PDF-tools
+** PDF-tools
  Sets pdf-tools as default pdf viewer.
  #+BEGIN_SRC emacs-lisp
 (after! tex
@@ -65,7 +70,7 @@ Focus new window after splitting.
   (load! "../.emacs.d/modules/lang/latex/+viewers"))
  #+END_SRC
 
-* Autocompletion
+** Autocompletion
 Changing delay settings
 #+BEGIN_SRC emacs-lisp
 (use-package! company
@@ -80,12 +85,13 @@ Changing delay settings
   (company-idle-delay 0.1))
 #+END_SRC
 
-* Org-mode
+** Org-mode
 Changing the way bullets look.
 #+BEGIN_SRC emacs-lisp
 (after! org
   (setq org-directory "~/Documents/org")
   (setq org-agenda-files '("~/Documents/org/agenda.org"))
+  (setq org-agenda-start-on-weekday 1)
   (setq org-ellipsis " ▼ "
         org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆")
         org-superstar-item-bullet-alist '((?+ . ?➤) (?- . ?✦)) ; changes +/- symbols in item lists
@@ -105,14 +111,14 @@ Org-mode level font sizes.
 #+END_SRC
 
 
-* Comint mode
+** Comint mode
 #+BEGIN_SRC emacs-lisp
 (map! :leader
       :desc "Run comint mode"
       "c z" #'comint-run)
 #+END_SRC
 
-* Compile command snippets
+** Compile command snippets
 
 #+BEGIN_SRC emacs-lisp
 (add-hook 'c++-mode-hook
@@ -150,12 +156,12 @@ Org-mode level font sizes.
               file))))))
 #+END_SRC
 
-* Theme
+** Theme
 #+BEGIN_SRC emacs-lisp
 (setq doom-theme 'doom-1337)
 #+END_SRC
 
-* Elfeed
+** Elfeed
 Emacs plugin for RSS feed.
 #+BEGIN_SRC emacs-lisp
 (use-package! elfeed-goodies)
@@ -180,7 +186,7 @@ Emacs plugin for RSS feed.
 (setq browse-url-browser-function 'eww-browse-url)
 #+END_SRC
 
-* Dashboard
+** Dashboard
 #+BEGIN_SRC emacs-lisp
 (use-package dashboard
   :init      ;; tweak dashboard config before loading it
@@ -207,7 +213,7 @@ List of keybindings (SPC h b b)")
                                     (bookmarks . "book"))))
 #+END_SRC
 
-* Dired
+** Dired
 Changing some bindings for dired.
 #+BEGIN_SRC emacs-lisp
 (map! :leader

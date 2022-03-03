@@ -9,6 +9,8 @@
 (setq evil-split-window-below t
       evil-vsplit-window-right t)
 
+(setq calendar-week-start-day 1)
+
 (setq lsp-enable-symbol-highlighting nil)
 (setq lsp-enable-snippet t)
 
@@ -47,6 +49,7 @@
 (after! org
   (setq org-directory "~/Documents/org")
   (setq org-agenda-files '("~/Documents/org/agenda.org"))
+  (setq org-agenda-start-on-weekday 1)
   (setq org-ellipsis " ▼ "
         org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆")
         org-superstar-item-bullet-alist '((?+ . ?➤) (?- . ?✦)) ; changes +/- symbols in item lists
