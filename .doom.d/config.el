@@ -6,6 +6,9 @@
 
 (setq confirm-kill-emacs nil)
 
+(setq evil-split-window-below t
+      evil-vsplit-window-right t)
+
 (setq lsp-enable-symbol-highlighting nil)
 (setq lsp-enable-snippet t)
 
@@ -140,10 +143,6 @@ List of keybindings (SPC h b b)")
   (dashboard-setup-startup-hook)
   (dashboard-modify-heading-icons '((recents . "file-text")
                                     (bookmarks . "book"))))
-
-(define-globalized-minor-mode global-rainbow-mode rainbow-mode
-  (lambda () (rainbow-mode 1)))
-(global-rainbow-mode 1 )
 
 (map! :leader
       (:prefix ("d" . "dired")
