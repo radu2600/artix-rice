@@ -21,7 +21,7 @@ Don't ask to quit.
 (setq confirm-kill-emacs nil)
 #+END_SRC
 
-Focus new window after splitting
+Focus new window after splitting.
 #+begin_src emacs-lisp
 (setq evil-split-window-below t
       evil-vsplit-window-right t)
@@ -84,6 +84,8 @@ Changing delay settings
 Changing the way bullets look.
 #+BEGIN_SRC emacs-lisp
 (after! org
+  (setq org-directory "~/Documents/org")
+  (setq org-agenda-files '("~/Documents/org/agenda.org"))
   (setq org-ellipsis " ▼ "
         org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆")
         org-superstar-item-bullet-alist '((?+ . ?➤) (?- . ?✦)) ; changes +/- symbols in item lists

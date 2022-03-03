@@ -45,6 +45,8 @@
   (company-idle-delay 0.1))
 
 (after! org
+  (setq org-directory "~/Documents/org")
+  (setq org-agenda-files '("~/Documents/org/agenda.org"))
   (setq org-ellipsis " ▼ "
         org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆")
         org-superstar-item-bullet-alist '((?+ . ?➤) (?- . ?✦)) ; changes +/- symbols in item lists
