@@ -11,7 +11,7 @@ Enable cursor blinking.
 
 Setting fonts.
 #+BEGIN_SRC emacs-lisp
-(setq doom-font (font-spec :family "Cascadia Mono" :size 21 :weight 'Regular)
+(setq doom-font (font-spec :family "Cascadia Mono" :size 22 :weight 'Regular)
       doom-big-font (font-spec :family "mononoki Nerd Font"  :size 21))
 ;;(setq doom-themes-enable-bold nil)
 #+END_SRC
@@ -19,6 +19,11 @@ Setting fonts.
 Don't ask to quit.
 #+BEGIN_SRC emacs-lisp
 (setq confirm-kill-emacs nil)
+#+END_SRC
+
+Set relative line numbers
+#+BEGIN_SRC emacs-lisp
+(setq display-line-numbers-type 'relative)
 #+END_SRC
 
 * LSP/Highlighting settings

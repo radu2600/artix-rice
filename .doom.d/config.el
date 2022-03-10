@@ -1,10 +1,12 @@
 (blink-cursor-mode t)
 
-(setq doom-font (font-spec :family "Cascadia Mono" :size 21 :weight 'Regular)
+(setq doom-font (font-spec :family "Cascadia Mono" :size 22 :weight 'Regular)
       doom-big-font (font-spec :family "mononoki Nerd Font"  :size 21))
 ;;(setq doom-themes-enable-bold nil)
 
 (setq confirm-kill-emacs nil)
+
+(setq display-line-numbers-type 'relative)
 
 (setq lsp-enable-symbol-highlighting nil)
 (setq lsp-enable-snippet t)
