@@ -11,6 +11,8 @@
 
 (setq calendar-week-start-day 1)
 
+(setq doom-line-numbers-style 'relative)
+
 (setq lsp-enable-symbol-highlighting nil)
 (setq lsp-enable-snippet t)
 

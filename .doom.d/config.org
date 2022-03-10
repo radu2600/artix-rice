@@ -32,6 +32,11 @@ Set Monday as first day of the week.
 (setq calendar-week-start-day 1)
 #+end_src
 
+Relative numbers
+#+begin_src emacs-lisp
+(setq doom-line-numbers-style 'relative)
+#+end_src
+
 ** LSP/Highlighting settings
 *** Snippet and highlighting settings
 #+BEGIN_SRC emacs-lisp

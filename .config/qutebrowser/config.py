@@ -301,7 +301,7 @@ c.colors.statusbar.passthrough.bg = '#34426f'
 # Type: QssColor
 c.colors.statusbar.url.warn.fg = 'yellow'
 
-c.fonts.default_family = '"Source Code Pro"'
+c.fonts.default_family = '"Noto Sans"'
 
 # Default font size to use. Whenever "default_size" is used in a font
 # setting, it's replaced with the size listed here. Valid values are
@@ -324,7 +324,7 @@ c.fonts.prompts = 'default_size sans-serif'
 
 # Font used in the statusbar.
 # Type: Font
-c.fonts.statusbar = '12pt "Source Code Pro"'
+c.fonts.statusbar = '12pt "Noto Sans"'
 
 # Bindings to use dmenu rather than qutebrowser's builtin search.
 #config.bind('o', 'spawn --userscript dmenu-open')
