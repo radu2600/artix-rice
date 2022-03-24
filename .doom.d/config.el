@@ -1,6 +1,6 @@
 (blink-cursor-mode t)
 
-(setq doom-font (font-spec :family "Cascadia Mono" :size 18 :weight 'Regular)
+(setq doom-font (font-spec :family "FantasqueSansMono Nerd Font" :size 22 :weight 'Regular)
       doom-big-font (font-spec :family "mononoki Nerd Font"  :size 21))
 ;;(setq doom-themes-enable-bold nil)
 
