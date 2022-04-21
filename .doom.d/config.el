@@ -1,10 +1,15 @@
 (blink-cursor-mode t)
 
-(setq doom-font (font-spec :family "Cascadia Mono" :size 22 :weight 'Regular)
+(setq doom-font (font-spec :family "Ubuntu Mono" :size 22 :weight 'Regular)
       doom-big-font (font-spec :family "mononoki Nerd Font"  :size 21))
 ;;(setq doom-themes-enable-bold nil)
 
 (setq confirm-kill-emacs nil)
+
+(setq evil-split-window-below t
+      evil-vsplit-window-right t)
+
+(setq calendar-week-start-day 1)
 
 (setq display-line-numbers-type 'relative)
 
@@ -23,9 +28,9 @@
                                 "--header-insertion-decorators=0"))
 (after! lsp-clangd (set-lsp-priority! 'clangd 2))
 
-(electric-pair-mode 1)
-(remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
-(remove-hook 'doom-first-buffer-hook #'show-paren-mode)
+;;(electric-pair-mode 1)
+;;(remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
+;;(remove-hook 'doom-first-buffer-hook #'show-paren-mode)
 
 (after! tex
   (setq TeX-view-program-selection nil)
@@ -44,6 +49,9 @@
   (company-idle-delay 0.1))
 
 (after! org
+  (setq org-directory "~/Documents/org")
+  (setq org-agenda-files '("~/Documents/org/agenda.org"))
+  (setq org-agenda-start-on-weekday 1)
   (setq org-ellipsis " ▼ "
         org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆")
         org-superstar-item-bullet-alist '((?+ . ?➤) (?- . ?✦)) ; changes +/- symbols in item lists
@@ -96,7 +104,7 @@
          (concat "python "
               file))))))
 
-(setq doom-theme 'doom-1337)
+(setq doom-theme 'doom-homage-black)
 
 (use-package! elfeed-goodies)
 (elfeed-goodies/setup)
@@ -142,10 +150,6 @@ List of keybindings (SPC h b b)")
   (dashboard-setup-startup-hook)
   (dashboard-modify-heading-icons '((recents . "file-text")
                                     (bookmarks . "book"))))
-
-(define-globalized-minor-mode global-rainbow-mode rainbow-mode
-  (lambda () (rainbow-mode 1)))
-(global-rainbow-mode 1 )
 
 (map! :leader
       (:prefix ("d" . "dired")
