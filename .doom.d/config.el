@@ -266,7 +266,7 @@
          (concat "python "
               file))))))
 
-(setq doom-theme 'doom-homage-black)
+(setq doom-theme 'doom-one)
 
 (use-package! elfeed-goodies)
 (elfeed-goodies/setup)
