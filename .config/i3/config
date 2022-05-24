@@ -197,12 +197,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # class                 border  bground text    indicator child_border
-client.focused          #cc2900 #cc2900 #F8F8F2 #cc2900   #cc2900
+client.focused          #5699af #5699af #F8F8F2 #ecbe7b   #ecbe7b
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #ffffff #ffffff #000000 #1D2330   #F8F8F8
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
 client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
-
 client.background       #F8F8F2
    # bar {
    #        status_command /usr/bin/bumblebee-status -m sensors cpu pasink nic disk:root \
@@ -231,7 +230,7 @@ client.background       #F8F8F2
    # }
 
 #Change wallpaperi
-exec_always --no-startup-id feh --bg-fill ~/.config/wallpapers/DarkredJapan.png
+exec_always --no-startup-id feh --bg-fill ~/.config/wallpapers/cthulu.png
 
 #Disable mouse accel
 exec_always --no-startup-id xinput --set-prop 12 'libinput Accel Speed' -0.7

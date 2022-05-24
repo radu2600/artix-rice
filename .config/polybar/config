@@ -25,20 +25,20 @@ format-margin =
 format-offset =
 
 [colors]
-background = #2f302f
-foreground = #f8f8f2
+background = #282c34
+foreground = #ff6c6b
 alert = #bd2c40
 volume-min = #a3be8c
 volume-med = #ebcb8b
 volume-max = #bf616a
-col1 = #f8f8f2
-col2 = #85e842
-col3 = #cc0099
-col4 = #ff9900
-col5 = #a9a1e1
-col6 = #E8b51a
-col7 = #E81a5f
-col8 = #00ccff
+col1 = #ecbe7b
+col2 = #51afef
+col3 = #da8548
+col4 = #a9a1e1
+col5 = #98be65
+col6 = #c678dd
+col7 = #ff6c6b
+col8 = #46d9ff
 
 ################################################################################
 ################################################################################
@@ -85,11 +85,10 @@ module-margin-left = 0
 module-margin-right = 0
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "JetBrains Mono NL:size=11:weight=Regular;2"
-font-1 = "JetBrains Mono NL:size=11;3"
-font-2 = "Font Awesome 6 Free:style=Regular:pixelsize=8;1"
-font-3 = "Font Awesome 6 Free:style=Solid:pixelsize=8;1"
-font-4 = "Font Awesome 6 Brands:pixelsize=8;1"
+font-0 = "mononoki Nerd Font:size=12:weight=Regular;2"
+font-1 = Font Awesome 6 Free:pixelsize=10;2
+font-2 = Font Awesome 6 Free Solid:pixelsize=10;2
+font-3 = Font Awesome 6 Brands:pixelsize=10;2
 
 modules-left = i3 sep2 xwindow
 modules-center =
@@ -153,7 +152,7 @@ type = internal/i3
 ; Default: false
 pin-workspaces = true
 
-; This will split the workspace name on ':'
+; This will split the workspace name on ':
 ; Default: false
 strip-wsnumbers = false
 
@@ -219,8 +218,8 @@ label-mode-background = #FFBB00
 ; Default: %icon%  %name%
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-background = #cc2900
-label-focused-foreground = #F8F8F2
+label-focused-background = #5699af
+label-focused-foreground = #f0f0f0
 ;label-focused-underline = #cc99ff
 label-focused-padding = 1
 
@@ -232,8 +231,8 @@ label-focused-padding = 1
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
 label-unfocused-padding = 1
-label-unfocused-background = #2f302f
-label-unfocused-foreground = #D9E0EE
+label-unfocused-background = ${colors.background}
+label-unfocused-foreground = ${colors.col4}
 label-unfocused-underline =
 
 ; visible = Active workspace on unfocused monitor
@@ -379,10 +378,10 @@ interval = 1
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
 date = " %a, %d.%m.%Y"
 format-prefix = " "
-format-prefix-foreground = ${colors.col1}
-format-foreground = ${colors.col1}
+format-prefix-foreground = ${colors.col8}
+format-foreground = ${colors.col8}
 format-background = ${colors.background}
-format-underline = ${colors.col1}
+format-underline = ${colors.col8}
 label = "%date%"
 
 ################################################################################
@@ -399,7 +398,7 @@ format-prefix = " "
 format-prefix-foreground = ${colors.col1}
 format-foreground = ${colors.col1}
 format-background = ${colors.background}
-format-underline = ${colors.col7}
+format-underline = ${colors.col1}
 label = "%time% "
 ################################################################################
 
@@ -430,9 +429,9 @@ spacing = 4
 ;   <bar-used>
 ;   <ramp-capacity>
 format-mounted = <label-mounted>
-format-mounted-foreground = ${colors.col1}
+format-mounted-foreground = ${colors.col6}
 format-mounted-background = ${colors.background}
-format-mounted-underline = ${colors.col1}
+format-mounted-underline = ${colors.col6}
 
 
 ; Available tokens:
@@ -483,9 +482,9 @@ spacing = 4
 ;   <bar-used>
 ;   <ramp-capacity>
 format-mounted = <label-mounted>
-format-mounted-foreground = ${colors.col1}
+format-mounted-foreground = ${colors.col5}
 format-mounted-background = ${colors.background}
-format-mounted-underline = ${colors.col7}
+format-mounted-underline = ${colors.col5}
 
 
 ; Available tokens:
@@ -528,9 +527,9 @@ unknown-as-up = false
 
 format = <label>
 format-prefix = " "
-format-prefix-foreground = ${colors.col1}
-format-foreground = ${colors.col1}
-format-underline = ${colors.col1}
+format-prefix-foreground = ${colors.col4}
+format-foreground = ${colors.col4}
+format-underline = ${colors.col4}
 format-background = ${colors.background}
 ################################################################################
 
@@ -566,11 +565,11 @@ type = custom/script
 exec = checkupdates | wc -l
 interval = 1000
 label = Updates: %output%
-format-foreground = ${colors.col1}
+format-foreground = ${colors.col3}
 format-background = ${colors.background}
 format-prefix = " "
-format-prefix-foreground = ${colors.col1}
-format-underline = ${colors.col7}
+format-prefix-foreground = ${colors.col3}
+format-underline = ${colors.col3}
 
 ################################################################################
 
@@ -588,7 +587,7 @@ format-background = ${colors.background}
 ; alternative separator
 type = custom/text
 content =  " []="
-content-foreground = ${colors.col1}
+content-foreground = #f8f8f8
 content-background =  ${colors.background}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -603,7 +602,7 @@ type = internal/temperature
 ; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
 ; Default: 0
 interval = 0.5
-thermal-zone = 0
+thermal-zone = 2
 
 ; Full path of temperature sysfs path
 ; Use `sensors` to find preferred temperature source, then run
@@ -612,14 +611,14 @@ thermal-zone = 0
 ; Default reverts to thermal zone setting
 
 warn-temperature = 70
-label-foreground = ${colors.col1}
+label-foreground = ${colors.col2}
 format-background = ${colors.background}
-format-underline = ${colors.col7}
+format-underline = ${colors.col2}
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${colors.col1}
+format-warn-underline = ${colors.col2}
 label = %temperature%
 label-warn =  %temperature%
-label-warn-foreground = ${colors.col7}
+label-warn-foreground = ${colors.col2}
 format = <ramp> <label>
 
 ramp-0 = 
@@ -627,7 +626,7 @@ ramp-1 = 
 ramp-2 = 
 ramp-3 = 
 ramp-4 = 
-ramp-foreground = ${colors.col1}
+ramp-foreground = ${colors.col2}
 
 ################################################################################
 
@@ -660,12 +659,11 @@ label-muted =  muted
 label-muted-foreground = #666
 
 click-right = pavucontrol
-format-volume-foreground = ${colors.col1}
+format-volume-foreground = ${colors.col7}
 format-volume-background = ${colors.background}
-format-muted-foreground = ${colors.col1}
+format-muted-foreground = ${colors.col7}
 format-muted-background = ${colors.background}
 format-muted-underline = #cc0099
 format-volume-underline = ${colors.col7}
 
-###############################################################################
-# vim:ft=dosini
+###############################################################################'
