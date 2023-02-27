@@ -4,35 +4,35 @@
 #+STARTUP: showeverything
 
 ** General settings
-Enable cursor blinking.
++ Enable cursor blinking.
 #+BEGIN_SRC emacs-lisp
 (blink-cursor-mode t)
 #+END_SRC
 
-Setting fonts.
++ Setting fonts.
 #+BEGIN_SRC emacs-lisp
 (setq doom-font (font-spec :family "Code New Roman" :size 22 :weight 'Regular)
-      doom-big-font (font-spec :family "mononoki Nerd Font"  :size 21))
+      doom-big-font (font-spec :family "mononoki Nerd Font"  :size 25))
 ;;(setq doom-themes-enable-bold nil)
 #+END_SRC
 
-Don't ask to quit.
++ Don't ask to quit.
 #+BEGIN_SRC emacs-lisp
 (setq confirm-kill-emacs nil)
 #+END_SRC
 
-Focus new window after splitting.
++ Focus new window after splitting.
 #+begin_src emacs-lisp
 (setq evil-split-window-below t
       evil-vsplit-window-right t)
 #+end_src
 
-Set Monday as first day of the week.
++ Set Monday as first day of the week.
 #+begin_src emacs-lisp
 (setq calendar-week-start-day 1)
 #+end_src
 
-Relative numbers
++ Relative numbers
 #+begin_src emacs-lisp
 (setq display-line-numbers-type 'relative)
 #+end_src
@@ -67,7 +67,7 @@ Relative numbers
 #+END_SRC
 
 ** PDF-tools
- Sets pdf-tools as default pdf viewer.
+ + Sets pdf-tools as default pdf viewer.
  #+BEGIN_SRC emacs-lisp
 (after! tex
   (setq TeX-view-program-selection nil)
@@ -76,7 +76,7 @@ Relative numbers
  #+END_SRC
 
 ** Autocompletion
-Changing delay settings
++ Changing delay settings
 #+BEGIN_SRC emacs-lisp
 (use-package! company
   ;;:after lsp-mode
@@ -91,7 +91,7 @@ Changing delay settings
 #+END_SRC
 
 ** Org-mode
-Changing the way bullets look.
++ Changing the way bullets look.
 #+BEGIN_SRC emacs-lisp
 (after! org
   (setq org-directory "~/Documents/org")
@@ -104,7 +104,7 @@ Changing the way bullets look.
   )
 #+END_SRC
 
-Org-mode level font sizes.
++ Org-mode level font sizes.
 #+BEGIN_SRC emacs-lisp
 (custom-set-faces
   '(org-level-1 ((t (:inherit outline-1 :height 1.4))))
@@ -131,7 +131,7 @@ Org-mode level font sizes.
     (unless (file-exists-p "Makefile")
       (set (make-local-variable 'compile-command)
        (let ((file (file-name-nondirectory buffer-file-name)))
-         (concat "g++ -Wextra -Wall -o "
+         (concat "g++ -std=c++20 -Wextra -Wall -o "
              (file-name-sans-extension file)
              " " file))))))
 
@@ -163,11 +163,11 @@ Org-mode level font sizes.
 
 ** Theme
 #+BEGIN_SRC emacs-lisp
-(setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-one)
 #+END_SRC
 
 ** Elfeed
-Emacs plugin for RSS feed.
++ Emacs plugin for RSS feed.
 #+BEGIN_SRC emacs-lisp
 (use-package! elfeed-goodies)
 (elfeed-goodies/setup)
@@ -219,7 +219,7 @@ List of keybindings (SPC h b b)")
 #+END_SRC
 
 ** Dired
-Changing some bindings for dired.
++ Changing some bindings for dired.
 #+BEGIN_SRC emacs-lisp
 (map! :leader
       (:prefix ("d" . "dired")

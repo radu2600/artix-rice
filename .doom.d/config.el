@@ -1,7 +1,7 @@
 (blink-cursor-mode t)
 
 (setq doom-font (font-spec :family "Code New Roman" :size 22 :weight 'Regular)
-      doom-big-font (font-spec :family "mononoki Nerd Font"  :size 21))
+      doom-big-font (font-spec :family "mononoki Nerd Font"  :size 25))
 ;;(setq doom-themes-enable-bold nil)
 
 (setq confirm-kill-emacs nil)
@@ -75,7 +75,7 @@
     (unless (file-exists-p "Makefile")
       (set (make-local-variable 'compile-command)
        (let ((file (file-name-nondirectory buffer-file-name)))
-         (concat "g++ -Wextra -Wall -o "
+         (concat "g++ -std=c++20 -Wextra -Wall -o "
              (file-name-sans-extension file)
              " " file))))))
 
@@ -104,7 +104,7 @@
          (concat "python "
               file))))))
 
-(setq doom-theme 'doom-dracula)
+(setq doom-theme 'doom-one)
 
 (use-package! elfeed-goodies)
 (elfeed-goodies/setup)

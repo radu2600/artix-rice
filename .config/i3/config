@@ -230,7 +230,7 @@ client.background       #F8F8F2
    # }
 
 #Change wallpaperi
-exec_always --no-startup-id feh --bg-fill ~/.config/wallpapers/cthulu.png
+exec_always --no-startup-id feh --bg-scale ~/.config/wallpapers/arx.jpeg
 
 #Disable mouse accel
 exec_always --no-startup-id xinput --set-prop 12 'libinput Accel Speed' -0.7
