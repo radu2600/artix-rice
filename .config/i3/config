@@ -30,7 +30,10 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
-exec --no-startup-id pipewire
+exec --no-startup-id pipewire &
+exec --no-startup-id pipewire-pulse &
+exec --no-startup-id pipewire-media-session &
+
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec "setxkbmap -layout us,de"
 exec "setxkbmap -option 'grp:alt_shift_toggle'"
