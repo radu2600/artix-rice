@@ -41,7 +41,7 @@ syntax on
 " Set colorscheme
 "colorscheme ghdark
 syntax enable
-colorscheme base16-synth-midnight-dark
+colorscheme base16-atelier-forest-light
 
 highlight LineNr guibg=NONE
 
@@ -52,7 +52,7 @@ set expandtab
 set ai
 
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
+      \ 'colorscheme': 'one',
       \ 'component': {
       \   'filename': '%F',
       \ }
@@ -64,7 +64,7 @@ set laststatus=2
 "Terminal colors 256
 "set t_Co=256
 "let g:rehash256 = 1
-"set background=dark
+set background=light
 set termguicolors
 
 set completeopt-=preview
