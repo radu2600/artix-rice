@@ -12,4 +12,5 @@ cp $HOME/.zshrc ./.zshrc
 cp $HOME/.tmux.conf ./.tmux.conf
 cp $HOME/.bashrc ./.bashrc
 cp -rf $HOME/.doom.d ./
+cp -rf $HOME/.config/qtile ./.config/
 cp -rf $HOME/.config/polybar ./.config/

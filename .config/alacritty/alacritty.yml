@@ -33,32 +33,33 @@ window:
 
 # Colors (Iceberg Light)
 colors:
-  # Default colors
   primary:
-    background: '0xe8e9ec'
-    foreground: '0x33374c'
-
-  # Normal colors
+    background: '#282c34'
+    foreground: '#bbc2cf'
+  cursor:
+    text: CellBackground
+    cursor: '#528bff'
+  selection:
+    text: CellForeground
+    background: '#3e4451'
   normal:
-    black:   '0xdcdfe7'
-    red:     '0xcc517a'
-    green:   '0x668e3d'
-    yellow:  '0xc57339'
-    blue:    '0x2d539e'
-    magenta: '0x7759b4'
-    cyan:    '0x3f83a6'
-    white:   '0x33374c'
-
-  # Bright colors
+    black:   '#1c1f24'
+    red:     '#ff6c6b'
+    green:   '#98be65'
+    yellow:  '#da8548'
+    blue:    '#51afef'
+    magenta: '#c678dd'
+    cyan:    '#5699af'
+    white:   '#abb2bf'
   bright:
-    black:   '0x8389a3'
-    red:     '0xcc3768'
-    green:   '0x598030'
-    yellow:  '0xb6662d'
-    blue:    '0x22478e'
-    magenta: '0x6845ad'
-    cyan:    '0x327698'
-    white:   '0x262a3f'
+    black:   '#5b6268'
+    red:     '#da8548'
+    green:   '#4db5bd'
+    yellow:  '#ecbe7b'
+    blue:    '#3071db'   # This is 2257a0 in Doom Emacs but I lightened it.
+    magenta: '#a9a1e1'
+    cyan:    '#46d9ff'
+    white:   '#dfdfdf'
 
 #key_bindings:
   #- { key: Paste,                                       action: Paste          }
