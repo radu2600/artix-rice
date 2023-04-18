@@ -4,7 +4,6 @@
 # Path to your oh-my-zsh installation.
 export TERM="xterm-256color"
 export ZSH="/home/radu/.oh-my-zsh"
-ZSH_THEME="powerlevel9k/powerlevel9k"
 #POWERLEVEL9K_MODE="nerdfont-complete"
 POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_DISABLE_RPROMPT=true
@@ -147,3 +146,4 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 export PATH="$HOME/.local/bin:$PATH"
 [ -f "/home/radu/.ghcup/env" ] && source "/home/radu/.ghcup/env" # ghcup-env
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
