@@ -41,7 +41,7 @@ syntax on
 " Set colorscheme
 "colorscheme ghdark
 syntax enable
-colorscheme base16-atelier-forest-light
+colorscheme base16-onedark
 
 highlight LineNr guibg=NONE
 
