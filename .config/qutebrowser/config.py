@@ -206,7 +206,7 @@ c.url.start_pages = 'https://searx.be/'
 # the search engine name to the search term, e.g. `:open google
 # qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://searx.be/?q={}'}
+c.url.searchengines = {'DEFAULT': 'https://search.brave.com/search?q={}'}
 
 # Text color of the completion widget. May be a single color to use for
 # all columns or a list of three colors, one for each column.
