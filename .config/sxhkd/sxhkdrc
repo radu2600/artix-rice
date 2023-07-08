@@ -22,8 +22,8 @@ super + Return
 	alacritty
 
 # launch different programs
-super + shift + {n,w,m,p}
-	{brave,qutebrowser,alacritty -e calcurse,pavucontrol}
+super + shift + {n,w,m,p,y,0}
+	{brave,qutebrowser,alacritty -e calcurse,pavucontrol,rofi-rbw,rofi -show p -modi p:rofi-power-menu}
 
 # run program launcher
 super + d
