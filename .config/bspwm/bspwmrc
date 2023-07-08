@@ -16,7 +16,7 @@ picom &
 nm-applet &
 polybar mainbar-bspwm &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-setxkbpmap -option caps:escape &
+setxkbmap -option caps:escape &
 xsetroot -cursor_name left_ptr &
 
 ### Select only ONE of the following four ways to set the wallpaper.
