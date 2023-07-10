@@ -2,6 +2,8 @@
 
 
 cp $HOME/.config/i3/config ./.config/i3/config
+cp $HOME/.config/bspwm/bspwmrc ./.config/bspwm/bspwmrc
+cp $HOME/.config/sxhkd/sxhkdrc ./.config/sxhkd/sxhkdrc
 cp $HOME/.config/nvim/init.vim ./.config/nvim/init.vim
 cp $HOME/.config/ranger/rc.conf ./.config/ranger/rc.conf
 cp $HOME/.config/gtk-3.0/settings.ini ./.config/gtk-3.0/settings.ini
@@ -12,5 +14,4 @@ cp $HOME/.zshrc ./.zshrc
 cp $HOME/.tmux.conf ./.tmux.conf
 cp $HOME/.bashrc ./.bashrc
 cp -rf $HOME/.doom.d ./
-cp -rf $HOME/.config/qtile ./.config/
 cp -rf $HOME/.config/polybar ./.config/

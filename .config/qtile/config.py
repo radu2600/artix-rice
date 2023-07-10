@@ -83,7 +83,7 @@ keys = [
     Key([mod, "shift"], "y", lazy.spawn('rofi-rbw'), desc="Launch bitwarden"),
     Key([mod, "shift"], "p", lazy.spawn('pavucontrol'), desc="Launch pavucontrol"),
     Key([mod, "shift"], "n", lazy.spawn('brave'), desc="Launch brave"),
-    Key([mod, "shift"], "m", lazy.spawn('calcurse'), desc="Launch calcurse"),
+    Key([mod, "shift"], "m", lazy.spawn('alacritty -e calcurse'), desc="Launch calcurse"),
     Key([mod, "shift"], "0", lazy.spawn('rofi -show p -modi p:rofi-power-menu'), desc="Launch power menu"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),

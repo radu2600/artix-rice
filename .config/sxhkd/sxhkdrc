@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+#  ____ _____
+# |  _ \_   _|  Derek Taylor (DistroTube)
+# | | | || |  	http://www.youtube.com/c/DistroTube
+# | |_| || |  	http://www.gitlab.com/dwt1/ 
+# |____/ |_|  	
+#        
+# A customized sxhkdrc for the bspwm window manager.
+# https://github.com/baskerville/sxhkd
+# https://github.com/baskerville/bspwm
+
+### WM INDEPENDENT KEYBINDINGS ###
+
+# make sxhkd reload its configuration files:
+super + shift + r
+	pkill -USR1 -x sxhkd
+
+### BSPWM HOTKEYS ###
+
+# terminal emulator
+super + Return
+	alacritty
+
+# launch different programs
+super + shift + {n,w,m,p,y,0}
+	{brave,qutebrowser,alacritty -e calcurse,pavucontrol,rofi-rbw,rofi -show p -modi p:rofi-power-menu}
+
+# run program launcher
+super + d
+	rofi -show drun -show-icons
+
+# quit/restart bspwm
+super + shift + e
+	bspc wm -r
+
+# close and kill
+super + shift + q
+	bspc node -c
+
+# alternate between the tiled and monocle layout
+super + space
+	bspc desktop -l next
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} focused:'^{1-9,10}'
+
+# preselect the direction
+
+# MOVE/RESIVE
+# shrink/expand
+ctrl + alt + h
+	bspc node -z {left -20 0} || bspc node -z {right -20 0}
+ctrl + alt + j
+	bspc node -z {bottom 0 20} || bspc node -z {top 0 20}
+ctrl + alt + k
+	bspc node -z {bottom 0 -20} || bspc node -z {top 0 -20}
+ctrl + alt + l
+	bspc node -z {left 20 0} || bspc node -z {right 20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+
