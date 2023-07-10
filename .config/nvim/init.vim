@@ -5,23 +5,12 @@ filetype off                  " required
 call plug#begin('~/.vim/plugged')
 
 " Keep Plugin commands between vundle#begin/end.
- Plug 'tpope/vim-fugitive'
  Plug 'jiangmiao/auto-pairs'
  "Bar
  Plug 'itchyny/lightline.vim'     
- "LSP
- Plug 'neovim/nvim-lspconfig'
- Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'joshdick/onedark.vim'
  Plug 'chriskempson/base16-vim'
-
  Plug 'preservim/nerdtree'
- Plug 'nvim-lua/completion-nvim'
- Plug 'sheerun/vim-polyglot'
- Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
- Plug 'junegunn/fzf.vim'
- Plug '~/.fzf'
-" All of your Plugins must be added before the following line
 call plug#end()
  filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -35,7 +24,7 @@ syntax on
  
 " Set colorscheme
 syntax enable
-colorscheme base16-atelier-forest-light
+colorscheme base16-dracula
 "colorscheme 256_noir
 set nocursorline
 set background=light
@@ -52,12 +41,13 @@ set smartindent
 set expandtab
 set ai
 
-"let g:lightline = {
-     " \ 'colorscheme': 'one',
-     " \ 'component': {
-     " \   'filename': '%F',
-     " \ }
-     " \ }
+
+let g:lightline = {
+      \ 'colorscheme': 'darcula',
+      \ 'component': {
+      \   'filename': '%F',
+      \ }
+      \ }
 
 "Fixing stuff
 set laststatus=2
@@ -74,14 +64,6 @@ set noswapfile
 set nowritebackup
 let g:loaded_matchparen=1
 
-"FZF CONFIGS
-" - down / up / left / right
-let g:fzf_layout = { 'down': '40%' }
-let g:fzf_preview_window = 'right:60%'
-nnoremap <c-p> :Files<cr>
-
-let g:python_highlight_space_errors = 0
-
 "Syntax
 hi Error NONE
 hi ErrorMsg NONE
@@ -93,54 +75,11 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
 
 
-"templates
-:autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
-:autocmd BufNewFile *.c 0r ~/.vim/templates/skeleton.c
-
-
-" LSP stuff
-"
-lua << EOF
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-require'lspconfig'.html.setup {
-  capabilities = capabilities,
-  on_attach = require'completion'.on_attach
-}
-
-local nvim_lsp = require('lspconfig')
-local on_attach = function(_, bufnr)
-require('completion').on_attach()
-local opts = { noremap=true, silent=true }
-end
-local servers = {'clangd', 'pyright', 'tsserver'}
-for _, lsp in ipairs(servers) do
-nvim_lsp[lsp].setup {
-  on_attach = require'completion'.on_attach
-}
-end
-
-EOF
-
-
 " fix conflict between completion-nvim and autopairs
 let g:completion_confirm_key = ""
 inoremap <expr> <cr>    pumvisible() ? "\<Plug>(completion_confirm_completion)" : "\<cr>"
 
-
-" Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
-
-" Avoid showing message extra message when using completion
-set shortmess+=c
-
-
-nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") 
       \ && b:NERDTree.isTabTree()) | q | endif
 
@@ -170,9 +109,7 @@ endfunction
 nnoremap <C-x> :<C-R>= GetFileType()<CR> <Enter>
 nnoremap <C-z> Enter>
 
-set guicursor =i:block
-
-let b:coc_diagnostic_disable = 1
-
+"set guicursor =i:block
 
 set signcolumn=no
+
