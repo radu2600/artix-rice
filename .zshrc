@@ -103,7 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 alias nv="nvim"
 alias snv="sudo nvim"
-alias vi="vim"
+alias vi="nvim"
 alias sp="sudo pacman"
 alias yay="paru"
 alias yeet="paru -Rns"
@@ -118,29 +118,29 @@ bindkey -v
 KEYTIMEOUT=5
 
 # Change cursor shape for different vi modes.
-#function zle-keymap-select {
-#  if [[ ${KEYMAP} == vicmd ]] ||
-#     [[ $1 = 'block' ]]; then
-#    echo -ne '\e[1 q'
-#
-#  elif [[ ${KEYMAP} == main ]] ||
-#       [[ ${KEYMAP} == viins ]] ||
-#       [[ ${KEYMAP} = '' ]] ||
-#       [[ $1 = 'beam' ]]; then
-#    echo -ne '\e[5 q'
-#  fi
-#}
-#zle -N zle-keymap-select
-#
-## Use beam shape cursor on startup.
-#echo -ne '\e[5 q'
-#
-## Use beam shape cursor for each new prompt.
-#_fix_cursor() {
-#   echo -ne '\e[5 q'
-#}
-#
-#precmd_functions+=(_fix_cursor)
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+
+# Use beam shape cursor on startup.
+echo -ne '\e[5 q'
+
+# Use beam shape cursor for each new prompt.
+_fix_cursor() {
+   echo -ne '\e[5 q'
+}
+
+precmd_functions+=(_fix_cursor)
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

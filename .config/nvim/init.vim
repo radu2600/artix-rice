@@ -167,4 +167,4 @@ endfunction
 nnoremap <C-x> :<C-R>= GetFileType()<CR> <Enter>
 nnoremap <C-z> <Enter>
 
-set guicursor =i:block
+"set guicursor =i:block
