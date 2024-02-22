@@ -16,13 +16,8 @@ call plug#begin('~/.vim/plugged')
  Plug 'drsooch/gruber-darker-vim'
  Plug 'chriskempson/base16-vim'
 
- ""LSP
- Plug 'neovim/nvim-lspconfig'
- Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
  Plug 'preservim/nerdtree'
- Plug 'nvim-lua/completion-nvim'
- Plug 'sheerun/vim-polyglot'
  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
  Plug 'junegunn/fzf.vim'
  Plug '~/.fzf'
@@ -41,7 +36,7 @@ syntax on
 " Set colorscheme
 "colorscheme ghdark
 syntax enable
-colorscheme base16-onedark
+colorscheme GruberDarker
 
 highlight LineNr guibg=NONE
 
@@ -94,34 +89,6 @@ hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
 
 "templates
 :autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
-
-
-
-" LSP stuff
-"
-lua << EOF
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-require'lspconfig'.html.setup {
-  capabilities = capabilities,
-  on_attach = require'completion'.on_attach
-}
-
-local nvim_lsp = require('lspconfig')
-local on_attach = function(_, bufnr)
-require('completion').on_attach()
-local opts = { noremap=true, silent=true }
-end
-local servers = {'clangd', 'pyright', 'tsserver'}
-for _, lsp in ipairs(servers) do
-nvim_lsp[lsp].setup {
-  on_attach = require'completion'.on_attach
-}
-end
-
-EOF
 
 
 " fix conflict between completion-nvim and autopairs
