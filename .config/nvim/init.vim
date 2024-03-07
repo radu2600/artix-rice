@@ -75,7 +75,6 @@ let g:fzf_layout = { 'down': '40%' }
 let g:fzf_preview_window = 'right:60%'
 nnoremap <c-p> :Files<cr>
 
-let g:python_highlight_space_errors = 0
 
 "Syntax
 hi Error NONE
@@ -86,25 +85,6 @@ se cul
 "hi "clear CursorLineNr
 hi cursorline cterm=NONE ctermbg=NONE
 hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
-
-"templates
-:autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
-
-
-" fix conflict between completion-nvim and autopairs
-let g:completion_confirm_key = ""
-inoremap <expr> <cr>    pumvisible() ? "\<Plug>(completion_confirm_completion)" : "\<cr>"
-
-
-" Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
-
-" Avoid showing message extra message when using completion
-set shortmess+=c
 
 
 nnoremap <C-n> :NERDTreeToggle<CR>
