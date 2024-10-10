@@ -22,8 +22,8 @@ super + Return
 	alacritty
 
 # launch different programs
-super + shift + {n,w,m,p,y,0}
-	{brave,qutebrowser,alacritty -e calcurse,pavucontrol,rofi-rbw,rofi -show p -modi p:rofi-power-menu}
+super + shift + {n,w,m,p,y,0,u}
+	{brave,qutebrowser,alacritty -e calcurse,pavucontrol,rofi-rbw,rofi -show p -modi p:rofi-power-menu,/home/radu/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/232.8660.185/bin/idea.sh}
 
 # run program launcher
 super + d

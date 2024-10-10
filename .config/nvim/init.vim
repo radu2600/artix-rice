@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
 " Keep Plugin commands between vundle#begin/end.
  Plug 'jiangmiao/auto-pairs'
  "Bar
- Plug 'itchyny/lightline.vim'     
+ "Plug 'itchyny/lightline.vim'     
  Plug 'joshdick/onedark.vim'
  Plug 'chriskempson/base16-vim'
  Plug 'preservim/nerdtree'
@@ -24,7 +24,7 @@ syntax on
  
 " Set colorscheme
 syntax enable
-colorscheme base16-dracula
+colorscheme base16-gruvbox-dark-hard
 "colorscheme 256_noir
 set nocursorline
 set background=light
@@ -41,13 +41,6 @@ set smartindent
 set expandtab
 set ai
 
-
-let g:lightline = {
-      \ 'colorscheme': 'darcula',
-      \ 'component': {
-      \   'filename': '%F',
-      \ }
-      \ }
 
 "Fixing stuff
 set laststatus=2
@@ -76,8 +69,8 @@ hi cursorlinenr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
 
 
 " fix conflict between completion-nvim and autopairs
-let g:completion_confirm_key = ""
-inoremap <expr> <cr>    pumvisible() ? "\<Plug>(completion_confirm_completion)" : "\<cr>"
+"let g:completion_confirm_key = ""
+"inoremap <expr> <cr>    pumvisible() ? "\<Plug>(completion_confirm_completion)" : "\<cr>"
 
 nnoremap <C-f> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") 

@@ -16,7 +16,8 @@ POWERLEVEL9K_DISABLE_RPROMPT=true
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ #ZSH_THEME_RANDOM_CANDIDATES=( "bira" )
+ ZSH_THEME="gnzh"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -107,6 +108,9 @@ alias sp="sudo pacman"
 alias yay="paru"
 alias yeet="paru -Rns"
 alias ls="exa"
+alias mpv="devour mpv"
+alias mupdf="devour mupdf"
+alias zathura="devour zathura"
 #
     # vim mode config
     # ---------------
@@ -118,49 +122,36 @@ bindkey -v
 KEYTIMEOUT=5
 
 # Change cursor shape for different vi modes.
-#function zle-keymap-select {
-#  if [[ ${KEYMAP} == vicmd ]] ||
-#     [[ $1 = 'block' ]]; then
-#    echo -ne '\e[1 q'
-#
-#  elif [[ ${KEYMAP} == main ]] ||
-#       [[ ${KEYMAP} == viins ]] ||
-#       [[ ${KEYMAP} = '' ]] ||
-#       [[ $1 = 'beam' ]]; then
-#    echo -ne '\e[5 q'
-#  fi
-#}
-#zle -N zle-keymap-select
-#
-## Use beam shape cursor on startup.
-#echo -ne '\e[5 q'
-#
-## Use beam shape cursor for each new prompt.
-#_fix_cursor() {
-#   echo -ne '\e[5 q'
-#}
-#
-#precmd_functions+=(_fix_cursor)
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+
+# Use beam shape cursor on startup.
+echo -ne '\e[5 q'
+
+# Use beam shape cursor for each new prompt.
+_fix_cursor() {
+   echo -ne '\e[5 q'
+}
+
+precmd_functions+=(_fix_cursor)
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
 export PATH="$HOME/.local/bin:$PATH"
 [ -f "/home/radu/.ghcup/env" ] && source "/home/radu/.ghcup/env" # ghcup-env
-source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+#source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/radu/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/radu/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/radu/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/radu/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+pfetch
 
