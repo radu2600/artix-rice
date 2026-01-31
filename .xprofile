@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# Desktop environment identification
+export XDG_CURRENT_DESKTOP=dwm
+
+# Theming
+export GTK_THEME=Orchis-Purple-Dark
+
+# dbus environment (important for many applications)
+dbus-update-activation-environment --all
+
+# Display configuration
+xrandr --output DVI-D-0 --mode 1920x1080 --rate 144 &
+
+# Keyboard layout
+setxkbmap -option caps:escape &
+
+# Wallpaper
+~/.fehbg &
+
+# Polkit agent 
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Compositor 
+picom &
+
+# Load nvidia settings
+nvidia-settings --load-config-only
