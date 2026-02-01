@@ -41,6 +41,26 @@ for path in $FILES; do
     echo "✓ $path"
 done
 
+#################################
+# dwmblocks scripts (/opt → repo)
+#################################
+
+DWM_SRC="/opt/dwmblocks"
+DWM_DST="$REPO_DIR/dwmblocks-scripts"
+
+if [ -d "$DWM_SRC" ]; then
+    echo
+    echo "Uploading dwmblocks scripts → repo"
+
+    mkdir -p "$DWM_DST"
+    rsync -av --delete \
+        --chmod=Fugo+rx \
+        "$DWM_SRC/" "$DWM_DST/"
+else
+    echo "⚠ /opt/dwmblocks not found, skipping"
+fi
+
+
 echo
 echo "✔ Upload complete"
 

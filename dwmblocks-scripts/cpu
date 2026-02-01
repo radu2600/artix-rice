@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# Cache in tmpfs to improve speed and reduce SSD load
+cache=/tmp/cpucache
+
+case $BLOCK_BUTTON in
+    2) setsid -f "$TERMINAL" -e htop ;;
+    3) notify-send "🪨 CPU module" "Shows overall CPU usage";;
+    6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+# Read total CPU stats (first line: cpu ...)
+stats=$(awk '/^cpu / {print ($2 + $3 + $4), $5}' /proc/stat)
+
+# Initialize cache if it doesn't exist
+[ ! -f "$cache" ] && echo "$stats" > "$cache"
+
+# Read previous stats
+old=$(cat "$cache")
+
+# Calculate CPU usage percentage
+usage=$(echo "$old $stats" | awk '{
+    prev_active = $1
+    prev_idle = $2
+    curr_active = $3
+    curr_idle = $4
+    
+    active_delta = curr_active - prev_active
+    idle_delta = curr_idle - prev_idle
+    total_delta = active_delta + idle_delta
+    
+    if (total_delta > 0)
+        printf "%.0f", (active_delta / total_delta) * 100
+    else
+        print "0"
+}')
+
+printf "cpu: %s%%\n" "$usage"
+
+# Update cache
+echo "$stats" > "$cache"

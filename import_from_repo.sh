@@ -41,6 +41,26 @@ for path in $FILES; do
     echo "✓ $path"
 done
 
+#################################
+# dwmblocks scripts (repo → /opt)
+#################################
+DWM_SRC="$REPO_DIR/dwmblocks-scripts"
+DWM_DST="/opt/dwmblocks"
+
+if [ -d "$DWM_SRC" ]; then
+    echo
+    echo "Importing dwmblocks scripts → /opt/dwmblocks"
+
+    sudo mkdir -p "$DWM_DST"
+    sudo rsync -av --delete \
+        "$DWM_SRC/" "$DWM_DST/"
+
+    sudo chmod +x "$DWM_DST"/* || true
+else
+    echo "⚠ No dwmblocks-scripts directory in repo, skipping"
+fi
+
+
 echo
 echo "✔ Import complete"
 
