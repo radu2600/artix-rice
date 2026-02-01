@@ -2,36 +2,12 @@
 " Basic Vim Settings
 " =========================
 
-colorscheme vim
-" Enable line numbers
 set number relativenumber
-
-" Enable mouse support
-set mouse=a
-
-" Tabs and indentation
-set ts=4 sw=4 sts=4
-set expandtab
-set smartindent
-set ai
-
-" UI and appearance
-syntax on
-filetype plugin indent on
-set background=dark
-set cursorline
-set signcolumn=no
-set laststatus=2
 
 " Disable backups and swap files
 set nobackup
 set nowritebackup
 set noswapfile
-
-" Completion settings
-set completeopt-=preview
-hi CursorLine term=bold cterm=bold guibg=Grey40
-
 
 " =========================
 " Plugin Manager (vim-plug)
@@ -45,12 +21,18 @@ Plug 'preservim/nerdtree'          " File tree
 
 call plug#end()
 
-" Optional tweaks
-highlight LineNr term=bold ctermfg=DarkGrey
-highlight CursorLineNr guifg=orange term=bold cterm=bold ctermfg=012 gui=bold
+set notermguicolors
+set title
+set bg=light
+set mouse=a
+set nohlsearch
+set clipboard+=unnamedplus
+set noshowmode
+set noruler
+set laststatus=0
+set noshowcmd
+colorscheme vim
 
-" =========================
-" Key mappings
 " =========================
 " NERDTree toggle
 nnoremap <C-f> :NERDTreeToggle<CR>

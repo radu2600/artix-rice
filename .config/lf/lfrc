@@ -55,6 +55,8 @@ cmd open &{{
 }}
 
 map d
+map m
+
 
 map au unarchive
 map az zip
