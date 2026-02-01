@@ -1,6 +1,6 @@
 # artix-rice
 
-Artix Linux / i3-gaps config files
+Arch Linux / dwm
 
-![image](https://user-images.githubusercontent.com/66037895/152566102-41d28847-10e5-42f1-96d1-856f5de6f032.png)
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/1369e8ba-ff81-4530-b567-b810df256666" />
 
