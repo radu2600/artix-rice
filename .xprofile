@@ -10,7 +10,7 @@ export GTK_THEME=Orchis-Purple-Dark
 dbus-update-activation-environment --all
 
 # Display configuration
-xrandr --output DVI-D-0 --mode 1920x1080 --rate 144 &
+xrandr --output eDP1 --mode 1920x1080 --rate 60 &
 
 # Keyboard layout
 setxkbmap -option caps:escape &
@@ -23,6 +23,3 @@ setxkbmap -option caps:escape &
 
 # Compositor 
 picom &
-
-# Load nvidia settings
-nvidia-settings --load-config-only
