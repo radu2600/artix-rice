@@ -1,5 +1,6 @@
 return {
     "nvim-telescope/telescope.nvim",
+    "nvim-telescope/telescope-ui-select.nvim",
 
     tag = "0.1.5",
 
@@ -8,7 +9,9 @@ return {
     },
 
     config = function()
-        require('telescope').setup({})
+        require('telescope').setup({
+        })
+        require("telescope").load_extension("ui-select")
 
         local builtin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
