@@ -5,7 +5,6 @@
 case $BLOCK_BUTTON in
 	1) wpctl set-mute @DEFAULT_SINK@ toggle ;;
  	3) setsid -w -f pavucontrol; pkill -RTMIN+4 "${STATUSBAR:-dwmblocks}" ;;
-
 	4) wpctl set-volume @DEFAULT_SINK@ 2%+ ;;
 	5) wpctl set-volume @DEFAULT_SINK@ 2%- ;;
 	2) notify-send "📢 Volume module" "\- Shows volume 🔊, 🔇 if muted.
@@ -37,4 +36,4 @@ case 1 in
 	* ) echo 🔇 && exit ;;
 esac
 
-echo "$icon$vol%"
+echo "$icon $vol%"

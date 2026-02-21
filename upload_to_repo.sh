@@ -8,17 +8,6 @@ FILES="
 .config/gtk-3.0/settings.ini
 .config/lf/lfrc
 .config/lf/icons
-.config/nvim/init.lua
-.config/nvim/lua/plugins/colors.lua
-.config/nvim/lua/plugins/fugitive.lua
-.config/nvim/lua/plugins/init.lua
-.config/nvim/lua/plugins/lsp.lua
-.config/nvim/lua/plugins/telescope.lua
-.config/nvim/lua/plugins/treesitter.lua
-.config/nvim/lua/plugins/undotree.lua
-.config/nvim/lua/lazy_init.lua
-.config/nvim/lua/remap.lua
-.config/nvim/lua/set.lua
 .config/picom.conf
 .config/zsh/aliases
 .config/zsh/.zprofile
@@ -68,6 +57,25 @@ if [ -d "$DWM_SRC" ]; then
         "$DWM_SRC/" "$DWM_DST/"
 else
     echo "⚠ /opt/dwmblocks not found, skipping"
+fi
+
+
+#################################
+# NVIM configj
+#################################
+
+NVIM_SRC="/home/radu/.config/nvim"
+NVIM_DEST="$REPO_DIR/.config/nvim"
+
+if [ -d "$NVIM_SRC" ]; then
+    echo
+    echo "Uploading nvim config → repo"
+
+    mkdir -p "$NVIM_DEST"
+    rsync -arv --delete \
+        "$NVIM_SRC/" "$NVIM_DEST/"
+else
+    echo "⚠ nvim config not found, skipping"
 fi
 
 

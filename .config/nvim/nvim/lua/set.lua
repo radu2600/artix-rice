@@ -1,4 +1,4 @@
-vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25"
+vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,a:blinkon1"
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -39,9 +39,6 @@ vim.opt.mouse = "a"
 vim.cmd("syntax on")
 vim.cmd("filetype plugin indent on")
 vim.opt.cursorline = false
--- Highlight current line number differently
-vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ff9e64", bg = "NONE", bold = true })
-vim.api.nvim_set_hl(0, "LineNr", { fg = "#5c6370", bg = "NONE" })
 
 -- Completion settings
 vim.opt.completeopt:remove("preview")

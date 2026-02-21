@@ -4,9 +4,10 @@ alias vi="vim"
 alias sp="sudo pacman"
 alias yay="paru"
 alias yeet="paru -Rns"
-alias ls="exa -a"
 alias mpv="devour mpv"
 alias mupdf="devour mupdf"
 alias zathura="devour zathura"
 alias vpn-connect="sudo wg-quick up wg0"
 alias vpn-disconnect="sudo wg-quick down wg0"
+alias ls='ls --color=auto'
+
