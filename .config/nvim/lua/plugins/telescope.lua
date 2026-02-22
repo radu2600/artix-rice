@@ -4,11 +4,38 @@ return {
     tag = "0.1.5",
 
     dependencies = {
-        "nvim-lua/plenary.nvim"
+        'nvim-lua/plenary.nvim',
+        -- optional but recommended
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
     },
 
     config = function()
-        require('telescope').setup({})
+        require('telescope').setup({
+		defaults = {
+			vimgrep_arguments = {
+              "rg",
+              "--follow",        -- Follow symbolic links
+              "--hidden",        -- Search for hidden files
+              "--no-heading",    -- Don't group matches by each file
+              "--with-filename", -- Print the file path with the matched lines
+              "--line-number",   -- Show line numbers
+              "--column",        -- Show column numbers
+              "--smart-case"    -- Smart case search
+			},
+			layout_strategy = 'horizontal',
+			layout_config = {
+				horizontal = {
+					width = 0.95,
+					height = 0.95,
+					preview_width = 0.5,
+				},
+			},
+			path_display = { "truncate", "filename_first" },
+			}
+		})
+		
+		require('telescope').load_extension('fzf')
+		
 
         local builtin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>pf', builtin.find_files, {})

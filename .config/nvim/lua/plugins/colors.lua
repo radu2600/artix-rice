@@ -1,4 +1,5 @@
-return {
+return
+{
   "blazkowolf/gruber-darker.nvim",
   opts = {
     bold = true,

@@ -2,7 +2,6 @@ require("set")
 require("remap")
 require("lazy_init")
 
-
 -- DO.not
 -- DO NOT INCLUDE THIS
 
@@ -47,12 +46,9 @@ autocmd({"BufWritePre"}, {
     command = [[%s/\s\+$//e]],
 })
 
-autocmd('BufEnter', {
-    group = ThePrimeagenGroup,
-    callback = function()
-        pcall(vim.cmd.colorscheme, "gruber-darker")
-    end
-})
+vim.cmd.colorscheme("gruber-darker")
+
+
 
 
 autocmd('LspAttach', {

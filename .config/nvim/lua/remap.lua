@@ -1,3 +1,4 @@
+-- Git blame mappings
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
@@ -33,7 +34,17 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
+
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+-- Show buffer list and prepare to switch
+vim.keymap.set("n", "<leader>b", ":buffers<CR>:buffer ", { noremap = true })
+
+vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", { noremap = true })
+vim.keymap.set("v", "<leader>gb", ":'<,'>Git blame<CR>", { noremap = true })
+
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>")
+vim.keymap.set("n", "<leader>bp", ":bprevious<CR>")
+vim.keymap.set("n", "<leader>bd", ":bdelete<CR>")
