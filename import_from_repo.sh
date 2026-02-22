@@ -60,6 +60,24 @@ else
     echo "⚠ No dwmblocks-scripts directory in repo, skipping"
 fi
 
+#################################
+# dwmblocks scripts (repo → /opt)
+#################################
+
+NVIM_SRC="$REPO_DIR/.config/nvim"
+NVIM_DST="/home/radu/.config/nvim"
+
+if [ -d "$NVIM_SRC" ]; then
+    echo
+    echo "Importing nvim config → ~/.config/nvim"
+
+    sudo mkdir -p "$NVIM_DST"
+    sudo rsync -av --delete \
+        "$NVIM_SRC/" "$NVIM_DST/"
+else
+    echo "⚠ No nvim directory in repo, skipping"
+fi
+
 
 echo
 echo "✔ Import complete"

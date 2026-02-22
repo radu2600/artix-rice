@@ -50,7 +50,7 @@ autocmd({"BufWritePre"}, {
 autocmd('BufEnter', {
     group = ThePrimeagenGroup,
     callback = function()
-        pcall(vim.cmd.colorscheme, "gruvbox")
+        pcall(vim.cmd.colorscheme, "gruber-darker")
     end
 })
 
