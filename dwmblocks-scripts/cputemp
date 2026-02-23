@@ -7,5 +7,5 @@ case 1 in
 	$((temp <= 50)) ) icon="" ;;
 	$((temp <= 70)) ) icon="" ;;
 esac
-printf "$icon %d°C\n" "$temp"
+printf "[ $icon %d°C ]\n" "$temp"
 

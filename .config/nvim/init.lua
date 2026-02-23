@@ -46,12 +46,9 @@ autocmd({"BufWritePre"}, {
     command = [[%s/\s\+$//e]],
 })
 
-autocmd('BufEnter', {
-    group = ThePrimeagenGroup,
-    callback = function()
-        pcall(vim.cmd.colorscheme, "gruvbox")
-    end
-})
+vim.cmd.colorscheme("gruber-darker")
+
+
 
 
 autocmd('LspAttach', {

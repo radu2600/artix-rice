@@ -11,8 +11,7 @@ return {
 					"typescript",
 					"c",
 					"lua",
-					"bash",
-					"python",
+					"bash"
 				},
 
 				-- Install parsers synchronously (only applied to `ensure_installed`)

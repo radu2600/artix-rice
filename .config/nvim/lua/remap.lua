@@ -44,3 +44,7 @@ vim.keymap.set("n", "<leader>b", ":buffers<CR>:buffer ", { noremap = true })
 
 vim.keymap.set("n", "<leader>gb", ":Git blame<CR>", { noremap = true })
 vim.keymap.set("v", "<leader>gb", ":'<,'>Git blame<CR>", { noremap = true })
+
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>")
+vim.keymap.set("n", "<leader>bp", ":bprevious<CR>")
+vim.keymap.set("n", "<leader>bd", ":bdelete<CR>")

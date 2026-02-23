@@ -4,7 +4,9 @@ return {
     tag = "0.1.5",
 
     dependencies = {
-        "nvim-lua/plenary.nvim"
+        'nvim-lua/plenary.nvim',
+        -- optional but recommended
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
     },
 
     config = function()
@@ -31,6 +33,9 @@ return {
 			path_display = { "truncate", "filename_first" },
 			}
 		})
+
+		require('telescope').load_extension('fzf')
+
 
         local builtin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>pf', builtin.find_files, {})

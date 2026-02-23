@@ -20,8 +20,8 @@ case "$location" in
         *) icon="/";;
 esac
 
-printf "%s: %s\n" "$icon" "$(df -B1 "$location" | awk 'NR==2 {
+printf "[ %s: %s\n" "$icon" "$(df -B1 "$location" | awk 'NR==2 {
     used = $3 / 1024^3
     total = $2 / 1024^3
-    printf "%.2fG/%.2fG", used, total
+    printf "%.2fG/%.2fG ]", used, total
 }')"
