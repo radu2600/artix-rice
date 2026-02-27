@@ -3,9 +3,6 @@
 # Desktop environment identification
 export XDG_CURRENT_DESKTOP=dwm
 
-# Theming
-export GTK_THEME=Orchis-Purple-Dark
-
 # dbus environment (important for many applications)
 dbus-update-activation-environment --all
 
@@ -18,10 +15,10 @@ setxkbmap -option caps:escape &
 # Wallpaper
 ~/.fehbg &
 
-# Polkit agent 
+# Polkit agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-# Compositor 
+# Compositor
 picom &
 
 # Load nvidia settings

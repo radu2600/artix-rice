@@ -1,5 +1,5 @@
 #! /bin/bash 
 
-dte="$(date +"[  %d.%m.%Y ] [  %H:%M:%S ]")"
+dte="$(date +"[ %d.%m.%Y] [ %H:%M:%S]")"
 echo -e "$dte "
 

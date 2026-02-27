@@ -6,4 +6,4 @@ cupd=$(checkupdates 2>/dev/null | wc -l)
 # Find and kill any faked processes owned by current user
 pgrep -u $USER faked | xargs -r kill -9 2>/dev/null
 
-echo "[ : $cupd ]"
+echo "[: $cupd]"

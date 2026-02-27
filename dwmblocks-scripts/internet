@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Show 🌐 if connected to ethernet or ❎ if none.
+
+case $BLOCK_BUTTON in
+	1) "$TERMINAL" -e nmtui; pkill -RTMIN+4 dwmblocks ;;
+	3) notify-send "🌐 Internet module" "\- Click to connect
+❎: no ethernet
+🌐: ethernet working
+" ;;
+	6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+# Ethernet
+[ "$(cat /sys/class/net/e*/operstate 2>/dev/null)" = 'up' ] && ethericon="🌐" || ethericon="❎"
+
+
+printf "[%s]\n" "$ethericon"

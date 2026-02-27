@@ -2,7 +2,7 @@ return
 {
   "blazkowolf/gruber-darker.nvim",
   opts = {
-    bold = true,
+    bold = false,
     italic = {
       strings = false,
     },
