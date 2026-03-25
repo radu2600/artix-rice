@@ -6,6 +6,9 @@
 
 # Start dwmblocks and dwm
 dwmblocks &
-while :; do
-    ssh-agent dwm
-done
+exec dbus-run-session sh -c '
+    while :; do
+        dwm
+        sleep 1
+    done
+'
